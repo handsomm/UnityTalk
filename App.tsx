@@ -1,117 +1,53 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { View, Text, StyleSheet, Button, ActivityIndicator } from 'react-native';
+import useTheme from './src/themes/useTheme';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const App = () => {
+  const [theme, toggleMode, switchTheme] = useTheme();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+  (async ()=>{
+    console.log(theme, "theme")
+  })()
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  if (!theme) {
+    return <ActivityIndicator/>; // or a loading spinner
+  }
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={[styles.container, { backgroundColor: theme.COLORS.primaryWhiteHex }]}>
+      <Text style={{ color: theme.COLORS.dangerHex }}>dangerHex</Text>
+      <Text style={{ color: theme.COLORS.infoHex }}>HeinfoHexllo</Text>
+      <Text style={{ color: theme.COLORS.successHex }}>successHex</Text>
+      <Text style={{ color: theme.COLORS.warningHex }}>warningHex</Text>
+
+      <Text style={{ color: theme.COLORS.primaryRedHex }}>primaryRedHex</Text>
+      <Text style={{ color: theme.COLORS.primaryOrangeHex }}>primaryOrangeHex</Text>
+
+      <Text style={{ color: theme.COLORS.primaryBlackHex }}>primaryBlackHex</Text>
+      <Text style={{ color: theme.COLORS.primaryWhiteHex }}>primaryWhiteHex</Text>
+
+      
+      <Text style={{ color: theme.COLORS.primaryDarkGreyHex }}>primaryDarkGreyHex</Text>
+      <Text style={{ color: theme.COLORS.primaryLightGreyHex }}>primaryLightGreyHex</Text>
+      <Text style={{ color: theme.COLORS.primaryBlackRGBA }}>primaryBlackRGBA</Text>
+      <Text style={{ color: theme.COLORS.secondaryBlackRGBA }}>secondaryBlackRGBA</Text>
+      
+
+      <Text style={{ color: theme.COLORS.primaryGreyHex }}>primaryGreyHex</Text>
+      <Text style={{ color: theme.COLORS.secondaryGreyHex }}>secondaryGreyHex</Text>
+      <Text style={{ color: theme.COLORS.secondaryDarkGreyHex }}>secondaryDarkGreyHex</Text>
+      <Text style={{ color: theme.COLORS.secondaryLightGreyHex }}>secondaryLightGreyHex</Text>
+      <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
+      <Button title="Toggle Mode" onPress={toggleMode} />
     </View>
   );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
