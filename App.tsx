@@ -5,12 +5,8 @@ import useTheme from './src/themes/useTheme';
 const App = () => {
   const [theme, toggleMode, switchTheme] = useTheme();
 
-  (async ()=>{
-    console.log(theme, "theme")
-  })()
-
   if (!theme) {
-    return <ActivityIndicator/>; // or a loading spinner
+    return <ActivityIndicator/>;
   }
 
   return (
