@@ -7,7 +7,7 @@ const { ThemeModule } = NativeModules;
 
 type ThemeMode = 'light' | 'dark';
 
-const useTheme = (): [Theme, () => void, (themeName: keyof typeof themes) => void] => {
+const useTheme = (): [Theme, () => void, (themeName: keyof typeof themes) => void, mode: ThemeMode] => {
   const [theme, setTheme] = useState<Theme>(themes.basic.light); // Default theme and mode
   const [themeName, setThemeName] = useState<keyof typeof themes>('basic');
   const [mode, setMode] = useState<ThemeMode>('light');
@@ -54,7 +54,7 @@ const useTheme = (): [Theme, () => void, (themeName: keyof typeof themes) => voi
     getStoredTheme();
   }, []);
 
-  return [theme, toggleMode, switchTheme];
+  return [theme, toggleMode, switchTheme, mode];
 };
 
 export default useTheme;

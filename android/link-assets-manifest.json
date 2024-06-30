@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/app/user_avatar.jpg",
+      "sha1": "55ceb33edcf2a10a4e0a0e6975b60b8681d4b743"
+    },
+    {
       "path": "src/assets/fonts/Poppins-Black.ttf",
       "sha1": "645e04c53c6b5b35bce654a811ebce16af8aa721"
     },
@@ -40,6 +44,14 @@
     {
       "path": "src/assets/fonts/app_icons.ttf",
       "sha1": "18e5fe2f93c853bbb495975f04df56438d595de5"
+    },
+    {
+      "path": "src/assets/fonts/icomoon.ttf",
+      "sha1": "bc129158ef53f143e8f46b3d3769410e81071f6a"
+    },
+    {
+      "path": "src/assets/icons/selection.json",
+      "sha1": "da719766fa10d35e05fa78192e24b6f73c48ac13"
     }
   ]
 }
