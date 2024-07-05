@@ -1,16 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 import CustomIcon from '../../components/CustomIcon'
 import { useTheme } from '../../context/ThemeContext';
+import MainContainer from '../../components/MainContainer';
 
 const HomeScreen = () => {
   const {theme} = useTheme();
 
   return (
-    <View style={{flex: 1, backgroundColor:theme.COLORS.primaryWhiteHex}}>
+    <MainContainer>
       <Text style={{color: theme.COLORS.primaryBlackHex}}>HomeScreen</Text>
-      <CustomIcon name='spinner' size={25}/>
-    </View>
+      <CustomIcon name='spinner' size={25} color={theme.COLORS.primaryBlackHex}/>
+    </MainContainer>
   )
 }
 

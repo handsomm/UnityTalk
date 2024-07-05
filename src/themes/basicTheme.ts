@@ -19,6 +19,11 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       space_36: 36,
     },
     COLORS: {
+      primary: '#F3F4F6',
+      secondary: '#FFFFFF',
+      tertiary: '#4B5563',
+      accent: '#0891B2',
+      tint: '#111827',
       primaryRedHex: '#DC3535',
       primaryOrangeHex: '#D17842',
       primaryBlackHex: '#0C0F14',
@@ -86,6 +91,11 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       space_36: 36,
     },
     COLORS: {
+      primary: '#1F2937',
+      secondary: '#111827',
+      tertiary: '#D1D5DB',
+      accent: '#0891B2',
+      tint: '#F9FAFB',
       primaryRedHex: '#DC3535',
       primaryOrangeHex: '#D17842',
       primaryBlackHex: '#FFFFFF',

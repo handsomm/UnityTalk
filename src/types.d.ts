@@ -16,6 +16,11 @@ export type Spacing = {
 };
 
 export type Color = {
+  primary: string;
+  secondary: string;
+  tertiary: string;
+  accent: string;
+  tint: string;
   primaryRedHex: string;
   primaryOrangeHex: string;
   primaryBlackHex: string;

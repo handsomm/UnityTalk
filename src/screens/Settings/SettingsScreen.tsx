@@ -1,12 +1,18 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { useTheme } from '../../context/ThemeContext';
+import MainContainer from '../../components/MainContainer';
 
 const SettingsScreen = () => {
   const {theme, mode, toggleMode, switchTheme} = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.COLORS.primaryWhiteHex }]}>
+    <MainContainer style={{justifyContent: "center"}}>
+      <Text style={{ color: theme.COLORS.primary }}>primary</Text>
+      <Text style={{ color: theme.COLORS.secondary }}>secondary</Text>
+      <Text style={{ color: theme.COLORS.tertiary }}>tertiary</Text>
+      <Text style={{ color: theme.COLORS.accent }}>accent</Text>
+      <Text style={{ color: theme.COLORS.tint }}>tint</Text>
       <Text style={{ color: theme.COLORS.dangerHex }}>dangerHex</Text>
       <Text style={{ color: theme.COLORS.infoHex }}>HeinfoHexllo</Text>
       <Text style={{ color: theme.COLORS.successHex }}>successHex</Text>
@@ -31,7 +37,7 @@ const SettingsScreen = () => {
       <Text style={{ color: theme.COLORS.secondaryLightGreyHex }}>secondaryLightGreyHex</Text>
       <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
       <Button title="Toggle Mode" onPress={toggleMode} />
-    </View>
+    </MainContainer>
   )
 }
 
