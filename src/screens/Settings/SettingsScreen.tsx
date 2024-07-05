@@ -1,9 +1,9 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import useTheme from '../../themes/useTheme';
+import { useTheme } from '../../context/ThemeContext';
 
 const SettingsScreen = () => {
-  const [theme, toggleMode, switchTheme] = useTheme();
+  const {theme, mode, toggleMode, switchTheme} = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.COLORS.primaryWhiteHex }]}>

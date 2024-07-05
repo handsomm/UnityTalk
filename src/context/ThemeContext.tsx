@@ -1,16 +1,35 @@
-import { useState, useEffect } from 'react';
-import { NativeModules } from 'react-native';
-import { themes } from './index';
+import { NativeModules } from 'react-native'
+import React, { ReactNode, createContext, useContext, useEffect, useState } from 'react'
+import { themes } from '../themes';
 import { Theme } from '../types';
 
-const { ThemeModule } = NativeModules;
 
 type ThemeMode = 'light' | 'dark';
 
-const useTheme = (): [Theme, () => void, (themeName: keyof typeof themes) => void, mode: ThemeMode] => {
+type ThemeContextProps= {
+  mode: ThemeMode;
+  theme: Theme;
+  toggleMode: () => void;
+  switchTheme: (newThemeName: keyof typeof themes) => void;
+}
+export const ThemeContext = createContext<ThemeContextProps>({
+  mode: 'light',
+  theme: themes.basic.light,
+  toggleMode: () => null,
+  switchTheme: () => null
+})
+
+export const ThemeProvider = ({children}:{
+  children: ReactNode
+}) => {
+  const { ThemeModule } = NativeModules;
   const [theme, setTheme] = useState<Theme>(themes.basic.light); // Default theme and mode
-  const [themeName, setThemeName] = useState<keyof typeof themes>('basic');
   const [mode, setMode] = useState<ThemeMode>('light');
+  const [themeName, setThemeName] = useState<keyof typeof themes>('basic');
+
+  useEffect(() => {
+    getStoredTheme();
+  }, []);
 
   const getStoredTheme = async () => {
     try {
@@ -50,11 +69,19 @@ const useTheme = (): [Theme, () => void, (themeName: keyof typeof themes) => voi
     }
   };
 
-  useEffect(() => {
-    getStoredTheme();
-  }, []);
 
-  return [theme, toggleMode, switchTheme, mode];
-};
+  const contextVal: ThemeContextProps = {
+    mode,
+    theme,
+    toggleMode,
+    switchTheme
+  }
 
-export default useTheme;
+  return (
+    <ThemeContext.Provider value={contextVal}>
+      {children}
+    </ThemeContext.Provider>
+  )
+}
+
+export const useTheme = () => useContext(ThemeContext);
