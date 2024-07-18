@@ -24,7 +24,7 @@ const MainContainer: React.FC<MainContainerProps> = ({
     <View
       style={[styles.container, {backgroundColor: theme.COLORS.primary}, style]}
       {...props}>
-      <StatusBar barStyle={mode === 'dark' ? "light-content" : 'dark-content'} />
+      <StatusBar backgroundColor={theme.COLORS.primary} barStyle={mode === 'dark' ? "light-content" : 'dark-content'} />
       <ScrollView showsVerticalScrollIndicator={false}>{children}</ScrollView>
     </View>
   );

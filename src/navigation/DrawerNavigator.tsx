@@ -3,6 +3,8 @@ import React from 'react';
 import HomeScreen from '../screens/Home/HomeScreen';
 import SettingsScreen from '../screens/Settings/SettingsScreen';
 import {useTheme} from '../context/ThemeContext';
+import CustomIcon from '../components/CustomIcon';
+import {TouchableOpacity, View} from 'react-native';
 
 type DrawerParamList = {
   Home: undefined;
@@ -11,37 +13,68 @@ type DrawerParamList = {
 
 const DrawerNavigator = () => {
   const DrawerNative = createDrawerNavigator<DrawerParamList>();
-  const {theme, mode} = useTheme();
+  const {theme} = useTheme();
 
   return (
     <DrawerNative.Navigator
       initialRouteName="Home"
-      screenOptions={{
+      screenOptions={({navigation}) => ({
         drawerStyle: {
-          backgroundColor: theme.COLORS.primaryWhiteHex,
+          backgroundColor: theme.COLORS.primary,
           width: 250,
         },
         headerStyle: {
-          backgroundColor: theme.COLORS.primaryBlackHex,
+          backgroundColor: theme.COLORS.primary,
         },
-        headerTintColor: theme.COLORS.primaryWhiteHex,
+        headerTintColor: theme.COLORS.tint,
         headerTitleStyle: {
           fontWeight: 'bold',
         },
-        drawerActiveTintColor: 'blue',
+        drawerActiveTintColor: theme.COLORS.accent,
         drawerLabelStyle: {
           color: theme.COLORS.primaryBlackHex,
         },
-      }}>
+        headerLeft: (props) => {
+          return (
+            <TouchableOpacity
+              style={{width: 38, justifyContent:'space-between', gap: 4, marginLeft: 12, padding: 5}}
+              onPress={navigation.toggleDrawer}>
+                <View style={{width: '100%', height: theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
+                <View style={{width: '70%', height: theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
+                <View style={{width: '100%', height:theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
+              </TouchableOpacity>
+          );
+        },
+      })}>
       <DrawerNative.Screen
         name="Home"
         component={HomeScreen}
-        // options={{
-        //   drawerLabel: "Home",
-        //   title: "UnityTalk",
-        // }}
+        options={{
+          drawerLabel: 'Home',
+          title: 'UnityTalk',
+          drawerIcon: () => (
+            <CustomIcon
+              name="home"
+              size={theme.FONTSIZE.size_20}
+              color={theme.COLORS.primaryBlackHex}
+            />
+          ),
+        }}
       />
-      <DrawerNative.Screen name="Setting" component={SettingsScreen} />
+      <DrawerNative.Screen
+        name="Setting"
+        component={SettingsScreen}
+        options={{
+          drawerLabel: 'Settings',
+          drawerIcon: () => (
+            <CustomIcon
+              name="gear"
+              size={theme.FONTSIZE.size_20}
+              color={theme.COLORS.primaryBlackHex}
+            />
+          ),
+        }}
+      />
     </DrawerNative.Navigator>
   );
 };
