@@ -1,14 +1,15 @@
-import {DrawerItemList, createDrawerNavigator} from '@react-navigation/drawer';
+import {DrawerItemList, DrawerNavigationProp, createDrawerNavigator} from '@react-navigation/drawer';
 import React from 'react';
 import HomeScreen from '../screens/Home/HomeScreen';
 import SettingsScreen from '../screens/Settings/SettingsScreen';
 import {useTheme} from '../context/ThemeContext';
 import CustomIcon from '../components/CustomIcon';
 import {TouchableOpacity, View} from 'react-native';
+import CustomHeader from '../components/CustomHeader';
 
 type DrawerParamList = {
   Home: undefined;
-  Setting: undefined;
+  Settings: undefined;
 };
 
 const DrawerNavigator = () => {
@@ -18,7 +19,7 @@ const DrawerNavigator = () => {
   return (
     <DrawerNative.Navigator
       initialRouteName="Home"
-      screenOptions={({navigation}) => ({
+      screenOptions={({navigation}: {navigation: DrawerNavigationProp<DrawerParamList>}) => ({
         drawerStyle: {
           backgroundColor: theme.COLORS.primary,
           width: 250,
@@ -41,10 +42,11 @@ const DrawerNavigator = () => {
               onPress={navigation.toggleDrawer}>
                 <View style={{width: '100%', height: theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
                 <View style={{width: '70%', height: theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
-                <View style={{width: '100%', height:theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
-              </TouchableOpacity>
+                <View style={{width: '85%', height:theme.SPACING.space_4, backgroundColor:theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4}} />
+            </TouchableOpacity>
           );
         },
+        headerTitle: (props) => <CustomHeader title={props.children} />
       })}>
       <DrawerNative.Screen
         name="Home"
@@ -62,7 +64,7 @@ const DrawerNavigator = () => {
         }}
       />
       <DrawerNative.Screen
-        name="Setting"
+        name="Settings"
         component={SettingsScreen}
         options={{
           drawerLabel: 'Settings',
