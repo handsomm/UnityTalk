@@ -4,7 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 
 const SettingsScreen = () => {
-  const {theme, mode, toggleMode, switchTheme} = useTheme();
+  const {theme, mode, toggleMode, switchTheme, setThemeMode} = useTheme();
 
   return (
     <MainContainer style={{justifyContent: "center"}}>
@@ -37,6 +37,9 @@ const SettingsScreen = () => {
       <Text style={{ color: theme.COLORS.secondaryLightGreyHex }}>secondaryLightGreyHex</Text>
       <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
       <Button title="Toggle Mode" onPress={toggleMode} />
+      <Button title="Light Mode" onPress={() =>setThemeMode('light')} />
+      <Button title="Dark Mode" onPress={() =>setThemeMode('dark')} />
+      <Button title="System Mode" onPress={() =>setThemeMode('light', 'system')} />
     </MainContainer>
   )
 }
