@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {View, StyleSheet, Animated, Text} from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import {useTheme} from '../context/ThemeContext';
+// import BouncingDots from './Animations/BouncingDots';
+// import FadingDots from './Animations/FadingDots';
 
-type CustomHeaderProps = {
-  title: string;
-};
-
-const CustomHeader = ({title}: CustomHeaderProps) => {
+const AnimatedHeader = ({title}: {title: string}) => {
   const {theme} = useTheme();
   const [isConnected, setIsConnected] = useState<boolean | null>(true);
-  const [statusMessage, setStatusMessage] = useState('Connecting...');
+  const slideAnim = useRef(new Animated.Value(0)).current;
+  const [currentText, setCurrentText] = useState('Connecting...');
+  const [showConnecting, setShowConnecting] = useState(true);
 
   useEffect(() => {
     const unsubscribe = NetInfo.addEventListener(state => {
@@ -21,42 +21,70 @@ const CustomHeader = ({title}: CustomHeaderProps) => {
   }, []);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-
     if (!isConnected) {
-      intervalId = setInterval(() => {
-        setStatusMessage(prevMessage =>
-          prevMessage === 'Connecting...'
-            ? 'Waiting for network...'
-            : 'Connecting...',
-        );
-      }, 2000);
+      setCurrentText('Connecting...');
+      Animated.sequence([
+        Animated.timing(slideAnim, {
+          toValue: 10,
+          duration: 100,
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
+        setShowConnecting(false);
+        setCurrentText('Waiting for network...');
+        slideAnim.setValue(-15);
+        Animated.timing(slideAnim, {
+          toValue: 0,
+          duration: 150,
+          useNativeDriver: true,                                                                                          
+        }).start();
+      });
     } else {
-      setStatusMessage(title);
+      setCurrentText(title);
+      setShowConnecting(true);
     }
-
-    return () => clearInterval(intervalId);
-  }, [isConnected, title]);
+  }, [isConnected, slideAnim]);
 
   return (
     <View style={styles.headerContainer}>
-      <Text style={[styles.headerText, {color: theme.COLORS.tint}]}>
-        {statusMessage}
-      </Text>
+      {showConnecting ? (
+        <Animated.Text
+          style={{
+            fontSize: theme.FONTSIZE.size_20,
+            fontWeight: 'bold',
+            color: theme.COLORS.tint,
+            transform: [{translateY: slideAnim}],
+          }}>
+          {currentText}
+        </Animated.Text>
+      ) : (
+        <View style={styles.bounceContainer}>
+          <Text
+            style={{
+              fontSize: theme.FONTSIZE.size_20,
+              fontWeight: 'bold',
+              color: theme.COLORS.tint,
+            }}>
+            {currentText}
+          </Text>
+          {/* <BouncingDots color={theme.COLORS.tint} /> */}
+          {/* <FadingDots color={theme.COLORS.tint} /> */}
+        </View>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   headerContainer: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
   },
-  headerText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  bounceContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
-export default CustomHeader;
+export default AnimatedHeader;
