@@ -5,7 +5,7 @@ import SettingsScreen from '../screens/Settings/SettingsScreen';
 import { useTheme } from '../context/ThemeContext';
 import CustomIcon from '../components/CustomIcon';
 import { TouchableOpacity, View } from 'react-native';
-import CustomHeader from '../components/CustomHeader';
+import AnimatedHeader from '../components/AnimatedHeader';
 import { RouteProp } from '@react-navigation/native';
 
 export type DrawerParamList = {
@@ -37,7 +37,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="home" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <CustomHeader title="Home" />
+            <AnimatedHeader title="Home" />
           </View>
         </View>
       </TouchableOpacity>
@@ -58,7 +58,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="gear" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <CustomHeader title="Settings" />
+            <AnimatedHeader title="Settings" />
           </View>
         </View>
       </TouchableOpacity>
@@ -78,7 +78,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="spinner" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <CustomHeader title="Test" />
+            <AnimatedHeader title="Test" />
           </View>
         </View>
       </TouchableOpacity>
@@ -133,7 +133,7 @@ const DrawerNavigator = () => {
           //   </TouchableOpacity>
           // );
         },
-        headerTitle: (props) => <CustomHeader title={props.children} />
+        headerTitle: (props) => <AnimatedHeader title={props.children} />
       })}>
       <DrawerNative.Screen
         name="Home"
