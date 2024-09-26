@@ -1,17 +1,18 @@
 import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
-import {StyleSheet, ActivityIndicator, SafeAreaView} from 'react-native';
+import { StyleSheet, ActivityIndicator, SafeAreaView } from 'react-native';
 import DrawerNavigator from './src/navigation/DrawerNavigator';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
 import {
   ThemeProvider,
   useTheme,
 } from './src/context/ThemeContext';
+import Routes from './src/navigation/Routes';
 
 const App = () => {
-  const {theme, mode} = useTheme();
+  const { theme, mode } = useTheme();
 
   if (!theme) {
     return <ActivityIndicator />;
@@ -48,13 +49,13 @@ const App = () => {
     // TODO: Need more work
     notifee.requestPermission()
 
-    
-    if(await requestUserPermission()) {
+
+    if (await requestUserPermission()) {
       messaging()
-      .getToken()
-      .then(fcmToken => {
-        console.log('FCM Token: ', fcmToken);
-      })
+        .getToken()
+        .then(fcmToken => {
+          console.log('FCM Token: ', fcmToken);
+        })
     } else {
       console.log('Not Authorized: ')
     }
@@ -70,7 +71,7 @@ const App = () => {
     //       Alert.alert('getInitialNotification: ' + 'Notification caused app to open from quit state');
     //     }
     //   });
-    
+
     // messaging()
     //   .onNotificationOpenedApp(async remoteMessage => {
     //     if(remoteMessage) {
@@ -110,7 +111,8 @@ const App = () => {
               notification: theme.COLORS.primaryRedHex,
             },
           }}>
-          <DrawerNavigator />
+          <Routes />
+          {/* <DrawerNavigator /> */}
         </NavigationContainer>
       </ThemeProvider>
     </SafeAreaView>
