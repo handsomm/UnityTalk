@@ -10,7 +10,7 @@ import React, {ReactNode} from 'react';
 import {useTheme} from '../context/ThemeContext';
 
 interface MainContainerProps {
-  children: ReactNode;
+  children?: ReactNode;
   style?: ViewStyle;
 }
 

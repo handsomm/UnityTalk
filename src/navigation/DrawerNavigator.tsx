@@ -62,6 +62,26 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           </View>
         </View>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          navigation.closeDrawer();
+          navigation.navigate('StackScreens', { screen: 'Test' })
+        }}
+        style={{
+          marginVertical: 10,
+          padding: 10,
+          backgroundColor: theme.COLORS.primary,
+          borderRadius: theme.BORDERRADIUS.radius_8,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <CustomIcon name="spinner" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
+          <View style={{ marginLeft: 10 }}>
+            <CustomHeader title="Test" />
+          </View>
+        </View>
+      </TouchableOpacity>
     </DrawerContentScrollView>
   );
 };
