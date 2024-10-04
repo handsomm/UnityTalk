@@ -37,6 +37,8 @@ export type Color = {
   warningHex: string;
   infoHex: string;
   dangerHex: string;
+
+  primaryPurple: string;
 };
 
 export type FontFamily = {
@@ -62,6 +64,8 @@ export type FontSize = {
   size_24: number;
   size_28: number;
   size_30: number;
+  size_32: number;
+  size_34: number;
 };
 
 export type BorderRadius = {

@@ -7,6 +7,7 @@ import CustomIcon from '../components/CustomIcon';
 import { TouchableOpacity, View } from 'react-native';
 import AnimatedHeader from '../components/AnimatedHeader';
 import { RouteProp } from '@react-navigation/native';
+import { Text } from 'react-native';
 
 export type DrawerParamList = {
   Home: undefined;
@@ -37,7 +38,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="home" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <AnimatedHeader title="Home" />
+            <Text style={{
+              fontSize: theme.FONTSIZE.size_20,
+              fontWeight: 'bold',
+              color: theme.COLORS.tint,
+            }}>
+              Home
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -58,7 +65,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="gear" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <AnimatedHeader title="Settings" />
+            <Text style={{
+              fontSize: theme.FONTSIZE.size_20,
+              fontWeight: 'bold',
+              color: theme.COLORS.tint,
+            }}>
+              Settings
+            </Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -78,7 +91,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name="spinner" size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
           <View style={{ marginLeft: 10 }}>
-            <AnimatedHeader title="Test" />
+            <Text style={{
+              fontSize: theme.FONTSIZE.size_20,
+              fontWeight: 'bold',
+              color: theme.COLORS.tint,
+            }}>
+              Test
+            </Text>
           </View>
         </View>
       </TouchableOpacity>

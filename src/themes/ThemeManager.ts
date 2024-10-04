@@ -2,7 +2,7 @@ import { NativeModules } from 'react-native';
 
 const { ThemeManager } = NativeModules;
 
-const setTheme = (themeName) => {
+const setTheme = (themeName: string) => {
   return ThemeManager.setTheme(themeName);
 };
 

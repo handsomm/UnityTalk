@@ -40,6 +40,8 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       warningHex: '#F59302',
       infoHex: '#2196F3',
       dangerHex: '#DC3535',
+
+      primaryPurple: "#6979F8"
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',
@@ -63,6 +65,8 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       size_24: 24,
       size_28: 28,
       size_30: 30,
+      size_32: 32,
+      size_34: 34,
     },
     BORDERRADIUS: {
       radius_4: 4,
@@ -112,6 +116,8 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       warningHex: '#F59302',
       infoHex: '#2196F3',
       dangerHex: '#DC3535',
+
+      primaryPurple: "#6979F8"
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',
@@ -135,6 +141,8 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       size_24: 24,
       size_28: 28,
       size_30: 30,
+      size_32: 32,
+      size_34: 34,
     },
     BORDERRADIUS: {
       radius_4: 4,
