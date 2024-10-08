@@ -37,3 +37,36 @@ Run the below command in project root directory.
 ```bash
 cd android && ./gradlew :app:signingReport
 ```
+
+## To link the assets with android and iOS
+
+```bash
+npx react-native-asset
+```
+
+## Generating an upload key for PlayStore
+
+Navigate to the folder :
+
+> **For Windows:** `C:\Program Files\Java\jdkx.x.x_x\bin`
+
+```bash
+keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+> **For Mac:** `/Library/Java/JavaVirtualMachines/jdkX.X.X_XXX.jdk/Contents/Home`
+
+```bash
+sudo keytool -genkey -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+
+## For changing the release version of the app
+
+```bash
+npm i -g react-native-version
+```
+
+For changing the version :
+
+```bash
+react-native-version --never-amend
+```
