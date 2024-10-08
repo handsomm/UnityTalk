@@ -2,6 +2,7 @@ import { Button, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
+import CustomHeader from '../../components/CustomHeader';
 
 const TestScreen = () => {
   const {theme, mode, toggleMode, switchTheme, setThemeMode} = useTheme();
@@ -9,6 +10,8 @@ const TestScreen = () => {
 
   return (
     <MainContainer style={{justifyContent: "center"}}>
+      <CustomHeader heroText='Test' icon='spinner' />
+
       <Text style={{ color: theme.COLORS.primary }}>primary</Text>
       <Text style={{ color: theme.COLORS.secondary }}>secondary</Text>
       <Text style={{ color: theme.COLORS.tertiary }}>tertiary</Text>

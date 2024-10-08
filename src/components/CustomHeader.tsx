@@ -1,16 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useTheme } from '../context/ThemeContext';
 import CustomIcon from './CustomIcon';
+import { useNavigation } from '@react-navigation/native';
 
 type CustomHeaderProps = {
   title?: string;
   border?: boolean;
   heroText?: string;
+  icon?: string;
 }
 
-const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText }) => {
+const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, icon }) => {
   const { theme } = useTheme();
+
+  const navigation = useNavigation();
 
 
   return (
@@ -20,7 +24,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText }) 
         (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.tint },
 
       ]}>
-        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity onPress={()=>navigation.goBack()} style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
           <CustomIcon name='cheveron-left' size={theme.FONTSIZE.size_30} color={theme.COLORS.primaryPurple} />
           {!title && (
             <Text style={{
@@ -29,7 +33,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText }) 
               Back
             </Text>
           )}
-        </View>
+        </TouchableOpacity>
         <Text style={{
           fontSize: theme.FONTSIZE.size_16,
           fontWeight: 'bold',
@@ -45,7 +49,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText }) 
       {heroText && (
         <View style={{ height: 50, paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center', borderBottomWidth: 1, borderBottomColor: theme.COLORS.secondaryLightGreyHex }}>
           <Text style={{ fontSize: theme.FONTSIZE.size_34, fontWeight: 'bold', color: theme.COLORS.tint }}>{heroText}</Text>
-          <CustomIcon name='gear' size={30} color={theme.COLORS.tint} />
+          <CustomIcon name={icon as string} size={30} color={theme.COLORS.tint} />
         </View>
       )}
     </View>
