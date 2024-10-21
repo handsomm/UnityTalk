@@ -18,17 +18,17 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
 
 
   return (
-    <View>
+    <View style={{ marginBottom: 12 }}>
       <View style={[
         styles.container,
         (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.tint },
 
       ]}>
-        <TouchableOpacity onPress={()=>navigation.goBack()} style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-          <CustomIcon name='cheveron-left' size={theme.FONTSIZE.size_30} color={theme.COLORS.primaryPurple} />
+        <TouchableOpacity onPress={() => navigation.goBack()} style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+          <CustomIcon name='cheveron-left' size={theme.FONTSIZE.size_28} color={theme.COLORS.primaryPurple} style={{ left: -5 }} />
           {!title && (
             <Text style={{
-              fontFamily: theme.FONTFAMILY.poppins_regular, fontSize: theme.FONTSIZE.size_16, color: theme.COLORS.primaryPurple,
+              fontFamily: theme.FONTFAMILY.poppins_regular, fontSize: theme.FONTSIZE.size_14, color: theme.COLORS.primaryPurple, left: -5
             }}>
               Back
             </Text>
