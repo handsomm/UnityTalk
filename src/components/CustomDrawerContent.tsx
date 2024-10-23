@@ -29,10 +29,15 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
       {/* <DrawerItemList {...props} /> */}
       {/* TODO: Needs to design the sidebar */}
       {DrawerItems.map(item => {
-        console.log(item, "item")
         return (
           <TouchableOpacity
-            onPress={() => navigation.navigate('StackScreens', { screen: item.name })}
+            onPress={() => {
+              console.log(item.name, "item.name")
+              navigation.closeDrawer();
+              if (item.name == "Home") return;
+              navigation.navigate('StackScreens', { screen: item.name });
+            }}
+            key={item.name}
             style={{
               marginVertical: 10,
               paddingVertical: 12,

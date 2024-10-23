@@ -20,9 +20,9 @@ export const basicTheme: { light: Theme, dark: Theme } = {
     },
     COLORS: {
       primary: '#F3F4F6',
-      secondary: '#FFFFFF',
+      secondary: '#E0E7FF',
       tertiary: '#4B5563',
-      accent: '#0891B2',
+      accent: '#8867FE',
       tint: '#111827',
       primaryRedHex: '#DC3535',
       primaryOrangeHex: '#D17842',
@@ -96,9 +96,9 @@ export const basicTheme: { light: Theme, dark: Theme } = {
     },
     COLORS: {
       primary: '#1F2937',
-      secondary: '#111827',
+      secondary: '#A0A8FF',
       tertiary: '#D1D5DB',
-      accent: '#0891B2',
+      accent: '#8867FE',
       tint: '#F9FAFB',
       primaryRedHex: '#DC3535',
       primaryOrangeHex: '#D17842',
@@ -154,3 +154,5 @@ export const basicTheme: { light: Theme, dark: Theme } = {
     },
   },
 };
+
+// accent color #0891B2

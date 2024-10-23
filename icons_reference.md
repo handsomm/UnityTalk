@@ -28,3 +28,4 @@ Here is a list of available icons:
 - signout
 - light
 - dark
+- shield
