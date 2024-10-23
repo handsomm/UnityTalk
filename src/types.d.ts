@@ -89,3 +89,8 @@ type Themes = {
   light: Theme;
   dark: Theme;
 };
+
+type DrawerItems = {
+  name: string;
+  icon: string;
+}

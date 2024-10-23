@@ -58,7 +58,7 @@ const DrawerNavigator = () => {
           ) : null
         },
         headerTitle: (props) => <AnimatedHeader title={props.children} />,
-        swipeEdgeWidth: 48
+        swipeEdgeWidth: 120
       })}>
       <DrawerNative.Screen
         name="Home"
