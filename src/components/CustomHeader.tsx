@@ -18,7 +18,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
 
 
   return (
-    <View style={{ marginBottom: theme.SPACING.space_36 }}>
+    <View>
       <View style={[
         styles.container,
         (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.tint },

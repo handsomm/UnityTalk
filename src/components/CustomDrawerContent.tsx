@@ -32,7 +32,6 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
         return (
           <TouchableOpacity
             onPress={() => {
-              console.log(item.name, "item.name")
               navigation.closeDrawer();
               if (item.name == "Home") return;
               navigation.navigate('StackScreens', { screen: item.name });

@@ -25,8 +25,8 @@
 		5030FB98EC104E2AB0CCB327 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B96EFD18E50043CF854AFA58 /* Poppins-Thin.ttf */; };
 		BC1683075A1047CFBD02E99C /* app_icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9340EA38819B4DC9A2D68FFA /* app_icons.ttf */; };
 		54745A4B710C4E07A5E80B27 /* user_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFB3149125714C65B474247D /* user_avatar.jpg */; };
-		87057E86870740D1AF6DE0BD /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2940474EB5F04BC781269A00 /* icomoon.ttf */; };
-		940EC58FA8A145469AEB9951 /* selection.json in Resources */ = {isa = PBXBuildFile; fileRef = CD324FFA1CF24DB483938697 /* selection.json */; };
+		0149606301F842F187456013 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 668EE4CCCAFB4006B048B9BA /* icomoon.ttf */; };
+		F7DDD57BB24244B2B90ACE32 /* selection.json in Resources */ = {isa = PBXBuildFile; fileRef = 58D2827DD9974392A5445B97 /* selection.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,8 @@
 		B96EFD18E50043CF854AFA58 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9340EA38819B4DC9A2D68FFA /* app_icons.ttf */ = {isa = PBXFileReference; name = "app_icons.ttf"; path = "../src/assets/fonts/app_icons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CFB3149125714C65B474247D /* user_avatar.jpg */ = {isa = PBXFileReference; name = "user_avatar.jpg"; path = "../src/assets/app/user_avatar.jpg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2940474EB5F04BC781269A00 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CD324FFA1CF24DB483938697 /* selection.json */ = {isa = PBXFileReference; name = "selection.json"; path = "../src/assets/icons/selection.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		668EE4CCCAFB4006B048B9BA /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../src/assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		58D2827DD9974392A5445B97 /* selection.json */ = {isa = PBXFileReference; name = "selection.json"; path = "../src/assets/icons/selection.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +191,8 @@
 				B96EFD18E50043CF854AFA58 /* Poppins-Thin.ttf */,
 				9340EA38819B4DC9A2D68FFA /* app_icons.ttf */,
 				CFB3149125714C65B474247D /* user_avatar.jpg */,
-				2940474EB5F04BC781269A00 /* icomoon.ttf */,
-				CD324FFA1CF24DB483938697 /* selection.json */,
+				668EE4CCCAFB4006B048B9BA /* icomoon.ttf */,
+				58D2827DD9974392A5445B97 /* selection.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -304,8 +304,8 @@
 				5030FB98EC104E2AB0CCB327 /* Poppins-Thin.ttf in Resources */,
 				BC1683075A1047CFBD02E99C /* app_icons.ttf in Resources */,
 				54745A4B710C4E07A5E80B27 /* user_avatar.jpg in Resources */,
-				87057E86870740D1AF6DE0BD /* icomoon.ttf in Resources */,
-				940EC58FA8A145469AEB9951 /* selection.json in Resources */,
+				0149606301F842F187456013 /* icomoon.ttf in Resources */,
+				F7DDD57BB24244B2B90ACE32 /* selection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,3 +29,15 @@ Here is a list of available icons:
 - light
 - dark
 - shield
+- world
+- chart-pie
+- folder
+- folder-fill
+- file-text
+- volume-0
+- volume-1
+- volume-2
+- volume-3
+- volume-mute
+- volume-up
+- volume-down
