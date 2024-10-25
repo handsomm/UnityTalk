@@ -156,8 +156,10 @@ const SettingsScreen = () => {
   ];
 
   return (
-    <MainContainer style={{ justifyContent: "center" }}>
-      <CustomHeader heroText='Settings' icon='gear' />
+    <MainContainer
+      header={<CustomHeader heroText='Settings' icon='gear' />}
+      style={{ justifyContent: "center" }}
+    >
       <View style={{ flex: 1 }}>
         {SettingItems.map(settingItem => {
           return (
