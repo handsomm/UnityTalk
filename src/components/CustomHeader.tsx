@@ -8,7 +8,7 @@ type CustomHeaderProps = {
   title?: string;
   border?: boolean;
   heroText?: string;
-  icon?: string;
+  icon?: IconType;
 }
 
 const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, icon }) => {

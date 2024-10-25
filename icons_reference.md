@@ -41,3 +41,4 @@ Here is a list of available icons:
 - volume-mute
 - volume-up
 - volume-down
+- info-fill

@@ -11,7 +11,7 @@ const SettingsScreen = () => {
   type SettingItem = {
     title: string;
     subtitle: string;
-    icon: string;
+    icon: IconType;
     iconBackgroundColor: string;
     border: boolean;
     onClick: () => void;
@@ -144,7 +144,7 @@ const SettingsScreen = () => {
         {
           title: "About",
           subtitle: "App version, development team, and more",
-          icon: "info-fill",
+          icon: 'info-fill',
           iconBackgroundColor: "#FFD700",
           border: true,
           onClick: () => {

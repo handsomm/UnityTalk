@@ -1,4 +1,4 @@
-export type Spacing = {
+type Spacing = {
   space_2: number;
   space_4: number;
   space_8: number;
@@ -15,7 +15,7 @@ export type Spacing = {
   space_36: number;
 };
 
-export type Color = {
+type Color = {
   primary: string;
   secondary: string;
   tertiary: string;
@@ -41,7 +41,7 @@ export type Color = {
   primaryPurple: string;
 };
 
-export type FontFamily = {
+type FontFamily = {
   poppins_black: string;
   poppins_bold: string;
   poppins_extrabold: string;
@@ -53,7 +53,7 @@ export type FontFamily = {
   poppins_thin: string;
 };
 
-export type FontSize = {
+type FontSize = {
   size_8: number;
   size_10: number;
   size_12: number;
@@ -68,7 +68,7 @@ export type FontSize = {
   size_34: number;
 };
 
-export type BorderRadius = {
+type BorderRadius = {
   radius_4: number;
   radius_8: number;
   radius_10: number;
@@ -92,5 +92,47 @@ type Themes = {
 
 type DrawerItems = {
   name: string;
-  icon: string;
+  icon: IconType;
 }
+
+type IconType = 
+  | "envelope-open"
+  | "envelope-close"
+  | "send"
+  | "heart"
+  | "heart-fill"
+  | "bell-slash"
+  | "bell-slash-fill"
+  | "bell"
+  | "bell-fill"
+  | "offline"
+  | "cheveron-down"
+  | "cheveron-up"
+  | "cheveron-left"
+  | "cheveron-right"
+  | "close"
+  | "home"
+  | "chat"
+  | "group-chat"
+  | "user"
+  | "spinner"
+  | "lock"
+  | "unlock"
+  | "gear"
+  | "signout"
+  | "light"
+  | "dark"
+  | "shield"
+  | "world"
+  | "chart-pie"
+  | "folder"
+  | "folder-fill"
+  | "file-text"
+  | "volume-0"
+  | "volume-1"
+  | "volume-2"
+  | "volume-3"
+  | "volume-mute"
+  | "volume-up"
+  | "volume-down"
+  | "info-fill";
