@@ -24,12 +24,9 @@ type Color = {
   primaryRedHex: string;
   primaryOrangeHex: string;
   primaryBlackHex: string;
-  primaryDarkGreyHex: string;
-  secondaryDarkGreyHex: string;
-  primaryGreyHex: string;
-  secondaryGreyHex: string;
-  primaryLightGreyHex: string;
-  secondaryLightGreyHex: string;
+  darkGreyHex: string;
+  greyHex: string;
+  lightGreyHex: string;
   primaryWhiteHex: string;
   primaryBlackRGBA: string;
   secondaryBlackRGBA: string;

@@ -170,14 +170,14 @@ const SettingsScreen = () => {
                   <React.Fragment key={item.title}>
                     <View style={[
                       { paddingHorizontal: theme.SPACING.space_16, flexDirection: 'row', gap: theme.SPACING.space_15, paddingVertical: 12 },
-                      item.border && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.secondaryLightGreyHex }
+                      item.border && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex }
                     ]}>
                       <View style={{ backgroundColor: item.iconBackgroundColor, borderRadius: theme.BORDERRADIUS.radius_25, height: 50, width: 50, justifyContent: "center", alignItems: "center" }}>
                         <CustomIcon name={item.icon} size={theme.FONTSIZE.size_28} color={theme.COLORS.primaryWhiteHex} />
                       </View>
                       <View style={{ flex: 6, justifyContent: "center" }}>
                         <Text style={{ fontSize: theme.FONTSIZE.size_16, fontWeight: "bold", color: theme.COLORS.tint }}>{item.title}</Text>
-                        <Text style={{ fontSize: theme.FONTSIZE.size_14, fontFamily: theme.FONTFAMILY.poppins_light, fontStyle: "italic", color: theme.COLORS.primaryLightGreyHex }}>{item.subtitle}</Text>
+                        <Text style={{ fontSize: theme.FONTSIZE.size_14, fontFamily: theme.FONTFAMILY.poppins_light, fontStyle: "italic", color: theme.COLORS.greyHex }}>{item.subtitle}</Text>
                       </View>
                     </View>
                   </React.Fragment>

@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import {themes} from '../themes';
-import {Theme} from '../types';
 
 type ThemeMode = 'light' | 'dark';
 

@@ -1,5 +1,3 @@
-import { Theme } from '../types';
-
 export const basicTheme: { light: Theme, dark: Theme } = {
   light: {
     SPACING: {
@@ -28,14 +26,11 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       primaryOrangeHex: '#D17842',
       primaryBlackHex: '#0C0F14',
       primaryWhiteHex: '#FFFFFF',
-      primaryGreyHex: '#252A32',
-      primaryDarkGreyHex: '#141921',
-      primaryLightGreyHex: '#52555A',
+      greyHex: '#70737C',
+      darkGreyHex: '#303136',
+      lightGreyHex: '#BDBEC3',
       primaryBlackRGBA: 'rgba(12,15,20,0.5)',
-      secondaryBlackRGBA: 'rgba(0,0,0,0.7)',
-      secondaryGreyHex: '#252A32',
-      secondaryDarkGreyHex: '#21262E',
-      secondaryLightGreyHex: '#AEAEAE',
+      secondaryBlackRGBA: 'rgba(0,0,0,0.5)',
       successHex: '#4CAF50',
       warningHex: '#F59302',
       infoHex: '#2196F3',
@@ -104,14 +99,11 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       primaryOrangeHex: '#D17842',
       primaryBlackHex: '#FFFFFF',
       primaryWhiteHex: '#0C0F14',
-      primaryGreyHex: '#AEAEAE',
-      primaryDarkGreyHex: '#52555A',
-      primaryLightGreyHex: '#141921',
+      greyHex: '#A0A4AB',
+      darkGreyHex: '#BDBEC3',
+      lightGreyHex: '#949494',
       primaryBlackRGBA: 'rgba(255,255,255,0.5)',
-      secondaryBlackRGBA: 'rgba(255,255,255,0.7)',
-      secondaryGreyHex: '#AEAEAE',
-      secondaryDarkGreyHex: '#52555A',
-      secondaryLightGreyHex: '#21262E',
+      secondaryBlackRGBA: 'rgba(255,255,255,0.5)',
       successHex: '#4CAF50',
       warningHex: '#F59302',
       infoHex: '#2196F3',
