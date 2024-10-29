@@ -103,9 +103,9 @@ const App = () => {
           theme={{
             dark: mode === 'dark',
             colors: {
-              primary: theme.COLORS.primaryDarkGreyHex,
+              primary: theme.COLORS.darkGreyHex,
               background: theme.COLORS.primaryWhiteHex,
-              card: theme.COLORS.primaryDarkGreyHex,
+              card: theme.COLORS.darkGreyHex,
               text: theme.COLORS.primaryBlackHex,
               border: theme.COLORS.primaryBlackRGBA,
               notification: theme.COLORS.primaryRedHex,

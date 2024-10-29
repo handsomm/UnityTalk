@@ -20,6 +20,7 @@ type Color = {
   secondary: string;
   tertiary: string;
   accent: string;
+  lightAccent: string;
   tint: string;
   primaryRedHex: string;
   primaryOrangeHex: string;

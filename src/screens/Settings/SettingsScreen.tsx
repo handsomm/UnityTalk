@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 import CustomHeader from '../../components/CustomHeader';
 import CustomIcon from '../../components/CustomIcon';
 import SectionHeader from '../../components/Settings/SectionHeader';
+import { useTypedNavigation } from '../../utils/navigationUtils';
 
 const SettingsScreen = () => {
   const { theme } = useTheme();
+  const navigation = useTypedNavigation<'Settings'>();
   type SettingItem = {
+    key: string;
     title: string;
     subtitle: string;
     icon: IconType;
@@ -27,6 +30,7 @@ const SettingsScreen = () => {
       section: "Appearance",
       items: [
         {
+          key: "ThemePreferences",
           title: "Theme Preferences",
           subtitle: "Theme and light/dark mode",
           icon: "dark",
@@ -42,6 +46,7 @@ const SettingsScreen = () => {
       section: "Account settings",
       items: [
         {
+          key: "ProfileInformation",
           title: "Profile Information",
           subtitle: "Name, Email, Security",
           icon: "user",
@@ -52,6 +57,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "Privacy",
           title: "Privacy",
           subtitle: "Control your privacy",
           icon: "shield",
@@ -62,6 +68,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "ChangePassword",
           title: "Change Password",
           subtitle: "Change your current password",
           icon: "lock",
@@ -77,6 +84,7 @@ const SettingsScreen = () => {
       section: "Notifications and Sounds",
       items: [
         {
+          key: "PushNotifications",
           title: "Push Notifications",
           subtitle: "Notify me about updates and messages",
           icon: "bell-fill",
@@ -87,6 +95,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "SoundPreferences",
           title: "Sound Preferences",
           subtitle: "Customize your notification sounds",
           icon: "volume-3",
@@ -102,6 +111,7 @@ const SettingsScreen = () => {
       section: "General",
       items: [
         {
+          key: "Language",
           title: "Language",
           subtitle: "Change app language",
           icon: "world",
@@ -112,6 +122,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "TermsConditions",
           title: "Terms & Conditions",
           subtitle: "Review our terms and conditions",
           icon: "file-text",
@@ -122,6 +133,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "PrivacyPolicy",
           title: "Privacy Policy",
           subtitle: "Learn about your data rights",
           icon: "shield",
@@ -132,6 +144,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "RateApp",
           title: "Rate our App",
           subtitle: "Rate & Review us",
           icon: "heart-fill",
@@ -142,6 +155,7 @@ const SettingsScreen = () => {
           }
         },
         {
+          key: "About",
           title: "About",
           subtitle: "App version, development team, and more",
           icon: 'info-fill',
@@ -167,7 +181,12 @@ const SettingsScreen = () => {
               <SectionHeader title={settingItem.section} key={settingItem.section} />
               {settingItem.items.map(item => {
                 return (
-                  <React.Fragment key={item.title}>
+                  <TouchableOpacity
+                    key={item.key}
+                    onPress={() => {
+                      navigation.navigate('SettingLayout', { title: item.title, childComponent: item.key })
+                    }}
+                  >
                     <View style={[
                       { paddingHorizontal: theme.SPACING.space_16, flexDirection: 'row', gap: theme.SPACING.space_15, paddingVertical: 12 },
                       item.border && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex }
@@ -180,7 +199,7 @@ const SettingsScreen = () => {
                         <Text style={{ fontSize: theme.FONTSIZE.size_14, fontFamily: theme.FONTFAMILY.poppins_light, fontStyle: "italic", color: theme.COLORS.greyHex }}>{item.subtitle}</Text>
                       </View>
                     </View>
-                  </React.Fragment>
+                  </TouchableOpacity>
                 )
               })}
             </React.Fragment>

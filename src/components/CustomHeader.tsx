@@ -21,7 +21,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
     <View style={{
       backgroundColor: theme.COLORS.primary,
       shadowColor:theme.COLORS.primaryBlackRGBA,
-      elevation:6
+      elevation:10
     }}>
       <View style={[
         styles.container,
@@ -43,7 +43,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
           fontWeight: 'bold',
           color: theme.COLORS.tint,
           fontFamily: theme.FONTFAMILY.poppins_semibold,
-          flex: 1,
+          flex: 3,
           textAlign: "center",
         }}>
           {title}
