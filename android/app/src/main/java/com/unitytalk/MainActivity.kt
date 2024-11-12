@@ -59,7 +59,7 @@ class MainActivity : ReactActivity() {
   }
 
   private fun sendTokenToBackend(token: String) {
-    val url = "https://webhook.site/900ea3a2-3a3a-4cbb-9a50-7676e2ae8b48"
+    val url = "https://api.soumya.fun/notifications/store-fcm-token/"
 
     val requestBody = FormBody.Builder()
         .add("fcm_token", token)
