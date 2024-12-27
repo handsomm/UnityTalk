@@ -10,21 +10,13 @@ import {
   useTheme,
 } from './src/context/ThemeContext';
 import Routes from './src/navigation/Routes';
+import { requestUserPermission } from './src/utils/utils';
 
 const App = () => {
   const { theme, mode } = useTheme();
 
   if (!theme) {
     return <ActivityIndicator />;
-  }
-
-  const requestUserPermission = async () => {
-    const authStatus = await messaging().requestPermission()
-    console.log('Authorization status(authStatus): ', authStatus);
-    return (
-      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-      authStatus === messaging.AuthorizationStatus.PROVISIONAL
-    );
   }
 
   async function onMessageReceived(message: any) {

@@ -59,7 +59,7 @@ class MainActivity : ReactActivity() {
   }
 
   private fun sendTokenToBackend(token: String) {
-    val url = "https://api.soumya.fun/notifications/store-fcm-token/"
+    val url = "https://api.soumya.site/notifications/store-fcm-token/"
 
     val requestBody = FormBody.Builder()
         .add("fcm_token", token)
