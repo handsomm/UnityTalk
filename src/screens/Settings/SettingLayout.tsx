@@ -5,7 +5,8 @@ import { useTypedRoute } from '../../utils/routeUtils';
 import { useTheme } from '../../context/ThemeContext';
 import PushNotifications from '../../components/Settings/PushNotifications';
 import { Text, View } from 'react-native';
-import { FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER } from '../../utils/constants';
+import { FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER } from '../../utils/constands';
+import ThemePreferences from './Theme/ThemePreferences';
 
 
 
@@ -18,6 +19,8 @@ const SettingLayout = () => {
     switch (params.childComponent) {
       case 'PushNotifications':
         return <PushNotifications />;
+      // case 'ThemePreferences':
+      //     return <ThemePreferences />;
       default:
         return (
           <View style={{ justifyContent: "center", alignItems: "center", height: FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER }}>
