@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SectionList, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
@@ -21,14 +21,16 @@ const SettingsScreen = () => {
   };
 
   type SettingSection = {
+    key: string;
     section: string;
-    items: SettingItem[];
+    data: SettingItem[];
   };
 
   const SettingItems: SettingSection[] = [
     {
+      key: "Appearance",
       section: "Appearance",
-      items: [
+      data: [
         {
           key: "ThemePreferences",
           title: "Theme Preferences",
@@ -43,8 +45,9 @@ const SettingsScreen = () => {
       ]
     },
     {
+      key: "Account settings",
       section: "Account settings",
-      items: [
+      data: [
         {
           key: "ProfileInformation",
           title: "Profile Information",
@@ -81,8 +84,9 @@ const SettingsScreen = () => {
       ]
     },
     {
+      key: "Notifications and Sounds",
       section: "Notifications and Sounds",
-      items: [
+      data: [
         {
           key: "PushNotifications",
           title: "Push Notifications",
@@ -108,8 +112,9 @@ const SettingsScreen = () => {
       ]
     },
     {
+      key: "General",
       section: "General",
-      items: [
+      data: [
         {
           key: "Language",
           title: "Language",
@@ -169,53 +174,45 @@ const SettingsScreen = () => {
     },
   ];
 
+  const renderSectionHeader = ({ section }: { section: any }) => (
+    <SectionHeader title={section.section} />
+  );
+
+  const renderItem = ({ item }: { item: any }) => (
+    <TouchableOpacity
+      key={item.key}
+      onPress={() => {
+        navigation.navigate('SettingLayout', { title: item.title, childComponent: item.key })
+      }}
+    >
+      <View style={[
+        { paddingHorizontal: theme.SPACING.space_16, flexDirection: 'row', gap: theme.SPACING.space_15, paddingVertical: 12 },
+        item.border && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex }
+      ]}>
+        <View style={{ backgroundColor: item.iconBackgroundColor, borderRadius: theme.BORDERRADIUS.radius_25, height: 50, width: 50, justifyContent: "center", alignItems: "center" }}>
+          <CustomIcon name={item.icon} size={theme.FONTSIZE.size_28} color={theme.COLORS.primaryWhiteHex} />
+        </View>
+        <View style={{ flex: 6, justifyContent: "center" }}>
+          <Text style={{ fontSize: theme.FONTSIZE.size_16, fontWeight: "bold", color: theme.COLORS.tint }}>{item.title}</Text>
+          <Text style={{ fontSize: theme.FONTSIZE.size_14, fontFamily: theme.FONTFAMILY.poppins_light, fontStyle: "italic", color: theme.COLORS.greyHex }}>{item.subtitle}</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+
   return (
     <MainContainer
       header={<CustomHeader heroText='Settings' icon='gear' />}
-      style={{ justifyContent: "center" }}
     >
-      <View style={{ flex: 1 }}>
-        {SettingItems.map(settingItem => {
-          return (
-            <React.Fragment key={settingItem.section}>
-              <SectionHeader title={settingItem.section} key={settingItem.section} />
-              {settingItem.items.map(item => {
-                return (
-                  <TouchableOpacity
-                    key={item.key}
-                    onPress={() => {
-                      navigation.navigate('SettingLayout', { title: item.title, childComponent: item.key })
-                    }}
-                  >
-                    <View style={[
-                      { paddingHorizontal: theme.SPACING.space_16, flexDirection: 'row', gap: theme.SPACING.space_15, paddingVertical: 12 },
-                      item.border && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex }
-                    ]}>
-                      <View style={{ backgroundColor: item.iconBackgroundColor, borderRadius: theme.BORDERRADIUS.radius_25, height: 50, width: 50, justifyContent: "center", alignItems: "center" }}>
-                        <CustomIcon name={item.icon} size={theme.FONTSIZE.size_28} color={theme.COLORS.primaryWhiteHex} />
-                      </View>
-                      <View style={{ flex: 6, justifyContent: "center" }}>
-                        <Text style={{ fontSize: theme.FONTSIZE.size_16, fontWeight: "bold", color: theme.COLORS.tint }}>{item.title}</Text>
-                        <Text style={{ fontSize: theme.FONTSIZE.size_14, fontFamily: theme.FONTFAMILY.poppins_light, fontStyle: "italic", color: theme.COLORS.greyHex }}>{item.subtitle}</Text>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                )
-              })}
-            </React.Fragment>
-          )
-        })}
-      </View>
+      <SectionList
+        sections={SettingItems}
+        keyExtractor={(item) => item.key}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        showsVerticalScrollIndicator={false}
+      />
     </MainContainer>
   )
 }
 
 export default SettingsScreen
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

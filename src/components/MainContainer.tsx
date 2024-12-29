@@ -5,6 +5,7 @@ import {
   ViewStyle,
   View,
   StatusBar,
+  SafeAreaView,
 } from 'react-native';
 import React, { ReactNode } from 'react';
 import { useTheme } from '../context/ThemeContext';
@@ -24,21 +25,15 @@ const MainContainer: React.FC<MainContainerProps> = ({
   const { theme, mode } = useTheme();
   return (
     <View
-      style={[styles.container, { backgroundColor: theme.COLORS.primary }, style]}
+      style={[{ backgroundColor: theme.COLORS.primary, flex: 1 }, style]}
       {...props}>
       <StatusBar backgroundColor={theme.COLORS.primary} barStyle={mode === 'dark' ? "light-content" : 'dark-content'} />
-      <ScrollView showsVerticalScrollIndicator={false} stickyHeaderIndices={header ? [0] : undefined}>
-        {header}
+      {header && <View>{header}</View>}
+      <View style={{ flex: 1 }}>
         {children}
-      </ScrollView>
+      </View>
     </View>
   );
 };
 
 export default MainContainer;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
