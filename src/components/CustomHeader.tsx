@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useTheme } from '../context/ThemeContext';
 import CustomIcon from './CustomIcon';
-import { useNavigation } from '@react-navigation/native';
+import { useTypedNavigation } from '../utils/navigationUtils';
 
 type CustomHeaderProps = {
   title?: string;
@@ -14,14 +14,14 @@ type CustomHeaderProps = {
 const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, icon }) => {
   const { theme } = useTheme();
 
-  const navigation = useNavigation();
+  const navigation = useTypedNavigation();
 
 
   return (
     <View style={{
       backgroundColor: theme.COLORS.primary,
-      shadowColor:theme.COLORS.primaryBlackRGBA,
-      elevation:10
+      shadowColor: theme.COLORS.primaryBlackRGBA,
+      elevation: 10
     }}>
       <View style={[
         styles.container,

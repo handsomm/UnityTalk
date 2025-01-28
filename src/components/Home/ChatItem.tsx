@@ -2,11 +2,17 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React from 'react'
 
-const ChatItem = ({ item }: { item: any }) => {
+type ChatItemProps = {
+  item: ChatItem,
+  onPress: () => void;
+}
+
+const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
+
   return (
     <TouchableOpacity
       style={styles.chatItem}
-      onPress={() => { console.log("object") }}
+      onPress={onPress}
     >
       <Image source={{ uri: item.avatar }} style={styles.avatar} />
       <View style={styles.chatInfo}>

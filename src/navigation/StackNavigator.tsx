@@ -4,10 +4,12 @@ import SettingsScreen from '../screens/Settings/SettingsScreen';
 import { RouteProp } from '@react-navigation/native';
 import TestScreen from '../screens/Test/TestScreen';
 import SettingLayout from '../screens/Settings/SettingLayout';
+import ChatScreen from '../screens/Chat/ChatScreen';
 
 export type StackParamList = {
   Settings: undefined;
-  SettingLayout: {title?: string, childComponent: string};
+  Chat: { item: ChatItem };
+  SettingLayout: { title?: string, childComponent: string };
   Test: undefined;
 };
 
@@ -23,6 +25,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Chat" component={ChatScreen} options={{ headerShown: false }} />
       <Stack.Screen name="SettingLayout" component={SettingLayout} options={{ headerShown: false }} />
       <Stack.Screen name="Test" component={TestScreen} options={{ headerShown: false }} />
     </Stack.Navigator>

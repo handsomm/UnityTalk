@@ -91,46 +91,54 @@ type Themes = {
 type DrawerItems = {
   name: string;
   icon: IconType;
-}
+};
 
-type IconType = 
-  | "envelope-open"
-  | "envelope-close"
-  | "send"
-  | "heart"
-  | "heart-fill"
-  | "bell-slash"
-  | "bell-slash-fill"
-  | "bell"
-  | "bell-fill"
-  | "offline"
-  | "cheveron-down"
-  | "cheveron-up"
-  | "cheveron-left"
-  | "cheveron-right"
-  | "close"
-  | "home"
-  | "chat"
-  | "group-chat"
-  | "user"
-  | "spinner"
-  | "lock"
-  | "unlock"
-  | "gear"
-  | "signout"
-  | "light"
-  | "dark"
-  | "shield"
-  | "world"
-  | "chart-pie"
-  | "folder"
-  | "folder-fill"
-  | "file-text"
-  | "volume-0"
-  | "volume-1"
-  | "volume-2"
-  | "volume-3"
-  | "volume-mute"
-  | "volume-up"
-  | "volume-down"
-  | "info-fill";
+type IconType =
+  | 'envelope-open'
+  | 'envelope-close'
+  | 'send'
+  | 'heart'
+  | 'heart-fill'
+  | 'bell-slash'
+  | 'bell-slash-fill'
+  | 'bell'
+  | 'bell-fill'
+  | 'offline'
+  | 'cheveron-down'
+  | 'cheveron-up'
+  | 'cheveron-left'
+  | 'cheveron-right'
+  | 'close'
+  | 'home'
+  | 'chat'
+  | 'group-chat'
+  | 'user'
+  | 'spinner'
+  | 'lock'
+  | 'unlock'
+  | 'gear'
+  | 'signout'
+  | 'light'
+  | 'dark'
+  | 'shield'
+  | 'world'
+  | 'chart-pie'
+  | 'folder'
+  | 'folder-fill'
+  | 'file-text'
+  | 'volume-0'
+  | 'volume-1'
+  | 'volume-2'
+  | 'volume-3'
+  | 'volume-mute'
+  | 'volume-up'
+  | 'volume-down'
+  | 'info-fill';
+
+type ChatItem = {
+  id: string;
+  name: string;
+  lastMessage: string;
+  time: string;
+  avatar: string;
+};

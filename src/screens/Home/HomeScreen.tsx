@@ -1,10 +1,11 @@
-import { View, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import React from 'react'
 import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 import ChatItem from '../../components/Home/ChatItem';
+import { useTypedNavigation } from '../../utils/navigationUtils';
 
-const HomeScreen = ({ navigation }: { navigation: any }) => {
+const HomeScreen = () => {
   const { theme } = useTheme();
 
   const chats = [
@@ -94,6 +95,8 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
     },
   ];
 
+  const navigation = useTypedNavigation<'StackScreens'>();
+
   return (
     <MainContainer>
       <View style={[
@@ -102,7 +105,12 @@ const HomeScreen = ({ navigation }: { navigation: any }) => {
         <FlatList
           data={chats}
           keyExtractor={(item) => item.id}
-          renderItem={ChatItem}
+          renderItem={({ item }) => (
+            <ChatItem item={item} onPress={() => {
+              console.log(item, "item");
+              navigation.navigate('StackScreens', { screen: 'Chat', params: {item} });
+            }} />
+          )}
           showsVerticalScrollIndicator={false}
         />
       </View>

@@ -4,7 +4,15 @@ import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {StackParamList} from '../navigation/StackNavigator';
 import {DrawerParamList} from '../navigation/DrawerNavigator';
 
-type CombinedParamList = StackParamList & DrawerParamList;
+type RootParamList = {
+  HomeDrawer: undefined;
+  StackScreens: {
+    screen?: keyof StackParamList;
+    params?: StackParamList[keyof StackParamList];
+  };
+};
+
+type CombinedParamList = RootParamList & StackParamList & DrawerParamList;
 
 export function useTypedNavigation<
   RouteName extends keyof CombinedParamList,
