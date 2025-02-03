@@ -71,6 +71,7 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       radius_15: 15,
       radius_20: 20,
       radius_25: 25,
+      radius_30: 30,
     },
   },
   dark: {
@@ -145,6 +146,7 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       radius_15: 15,
       radius_20: 20,
       radius_25: 25,
+      radius_30: 30,
     },
   },
 };

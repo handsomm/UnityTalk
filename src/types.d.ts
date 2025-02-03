@@ -73,6 +73,7 @@ type BorderRadius = {
   radius_15: number;
   radius_20: number;
   radius_25: number;
+  radius_30: number;
 };
 
 type Theme = {
@@ -141,4 +142,5 @@ type ChatItem = {
   lastMessage: string;
   time: string;
   avatar: string;
+  unreadCount: number;
 };
