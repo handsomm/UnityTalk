@@ -52,7 +52,36 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
             {item.lastMessage || " "}
           </Text>
         </View>
-        <Text style={{ fontSize: theme.FONTSIZE.size_12, color: theme.COLORS.greyHex }}>{item.time}</Text>
+
+        <View style={{ alignItems: "flex-end" }}>
+          <Text style={{ fontSize: theme.FONTSIZE.size_12, color: item.unreadCount > 0 ? theme.COLORS.successHex : theme.COLORS.greyHex, }}>
+            {item.time}
+          </Text>
+          {item.unreadCount > 0 && (
+            <View
+              style={{
+                backgroundColor: theme.COLORS.successHex,
+                borderRadius: 12,
+                minWidth: 24,
+                height: 24,
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 4,
+                paddingHorizontal: 6,
+              }}
+            >
+              <Text
+                style={{
+                  color: theme.COLORS.primaryWhiteHex,
+                  fontSize: theme.FONTSIZE.size_12,
+                  fontWeight: "bold",
+                }}
+              >
+                {item.unreadCount > 99 ? "99+" : item.unreadCount}
+              </Text>
+            </View>
+          )}
+        </View>
       </View>
     </TouchableOpacity>
   )
