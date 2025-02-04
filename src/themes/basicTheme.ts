@@ -45,6 +45,7 @@ export const basicTheme: {light: Theme; dark: Theme} = {
 
       // Status Bar Colors
       statusbar: '#0081cf', // Status bar color
+      statusbarContent: "#F8FAFC" // Status bar content color
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',
@@ -127,6 +128,7 @@ export const basicTheme: {light: Theme; dark: Theme} = {
 
       // Status Bar Colors
       statusbar: '#0e354c', // Status bar color
+      statusbarContent: "#F8FAFC" // Status bar content color
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',

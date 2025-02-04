@@ -44,6 +44,7 @@ type Color = {
 
   // Status Bar Colors
   statusbar: string;
+  statusbarContent: string;
 };
 
 type FontFamily = {

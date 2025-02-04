@@ -52,7 +52,7 @@ const AnimatedHeader = ({title}: {title: string}) => {
           style={{
             fontSize: theme.FONTSIZE.size_20,
             fontWeight: 'bold',
-            color: theme.COLORS.tint,
+            color: theme.COLORS.statusbarContent,
             transform: [{translateY: slideAnim}],
           }}>
           {currentText}
@@ -63,7 +63,7 @@ const AnimatedHeader = ({title}: {title: string}) => {
             style={{
               fontSize: theme.FONTSIZE.size_20,
               fontWeight: 'bold',
-              color: theme.COLORS.tint,
+              color: theme.COLORS.statusbarContent,
             }}>
             {currentText}
           </Text>

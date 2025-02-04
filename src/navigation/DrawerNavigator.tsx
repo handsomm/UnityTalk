@@ -51,9 +51,9 @@ const DrawerNavigator = () => {
               accessibilityLabel='Toggle navigation menu'
               style={{ width: 38, justifyContent: 'space-between', gap: 4, marginLeft: 12, padding: 5 }}
               onPress={navigation.toggleDrawer}>
-              <View style={{ width: '100%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4 }} />
-              <View style={{ width: '70%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4 }} />
-              <View style={{ width: '85%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.tint, borderRadius: theme.BORDERRADIUS.radius_4 }} />
+              <View style={{ width: '100%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
+              <View style={{ width: '70%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
+              <View style={{ width: '85%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
             </TouchableOpacity>
           ) : null
         },
