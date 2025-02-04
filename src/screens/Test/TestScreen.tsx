@@ -41,6 +41,7 @@ const TestScreen = () => {
       <Text style={{ color: theme.COLORS.statusbar }}>statusbar</Text>
 
       <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
+      <Button title="Switch to Elegant" onPress={() => switchTheme('elegant')} />
       <Button title="Toggle Mode" onPress={toggleMode} />
       <Button title="Light Mode" onPress={() => setThemeMode('light')} />
       <Button title="Dark Mode" onPress={() => setThemeMode('dark')} />
