@@ -34,7 +34,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
           </Text>
         </View>
       )}
-      <View style={[styles.chatInfo, { borderBottomColor: theme.COLORS.lightGreyHex }]}>
+      <View style={[styles.chatInfo, { borderBottomColor: theme.COLORS.gray400 }]}>
         <View style={{ flex: 1, gap: 2 }}>
           <Text style={{ color: theme.COLORS.tint, fontSize: theme.FONTSIZE.size_16, fontWeight: 'bold' }} numberOfLines={1}>
             {item.name}
@@ -54,13 +54,13 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
         </View>
 
         <View style={{ alignItems: "flex-end" }}>
-          <Text style={{ fontSize: theme.FONTSIZE.size_12, color: item.unreadCount > 0 ? theme.COLORS.successHex : theme.COLORS.greyHex, }}>
+          <Text style={{ fontSize: theme.FONTSIZE.size_12, color: item.unreadCount > 0 ? theme.COLORS.success : theme.COLORS.gray, }}>
             {item.time}
           </Text>
           {item.unreadCount > 0 && (
             <View
               style={{
-                backgroundColor: theme.COLORS.successHex,
+                backgroundColor: theme.COLORS.success,
                 borderRadius: 12,
                 minWidth: 24,
                 height: 24,
@@ -72,7 +72,7 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
             >
               <Text
                 style={{
-                  color: theme.COLORS.primaryWhiteHex,
+                  color: theme.COLORS.white,
                   fontSize: theme.FONTSIZE.size_12,
                   fontWeight: "bold",
                 }}

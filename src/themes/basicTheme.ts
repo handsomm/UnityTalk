@@ -1,4 +1,4 @@
-export const basicTheme: { light: Theme, dark: Theme } = {
+export const basicTheme: {light: Theme; dark: Theme} = {
   light: {
     SPACING: {
       space_2: 2,
@@ -17,27 +17,34 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       space_36: 36,
     },
     COLORS: {
-      primary: '#F3F4F6',
-      secondary: '#E0E7FF',
-      tertiary: '#4B5563',
-      accent: '#8867FE',
-      lightAccent: '#AD91F3',
-      tint: '#111827',
-      primaryRedHex: '#DC3535',
-      primaryOrangeHex: '#D17842',
-      primaryBlackHex: '#0C0F14',
-      primaryWhiteHex: '#FFFFFF',
-      greyHex: '#70737C',
-      darkGreyHex: '#303136',
-      lightGreyHex: '#BDBEC3',
-      primaryBlackRGBA: 'rgba(12,15,20,0.5)',
-      secondaryBlackRGBA: 'rgba(0,0,0,0.5)',
-      successHex: '#4CAF50',
-      warningHex: '#F59302',
-      infoHex: '#2196F3',
-      dangerHex: '#DC3535',
+      primary: '#F3F4F6', // Light background
+      secondary: '#D1D5DB', // Light gray for borders, dividers
+      tertiary: '#4B5563', // Muted text, icons
+      accent: '#8867FE', // Main accent color (buttons, highlights)
+      lightAccent: '#AD91F3', // Lighter shade of accent
+      tint: '#111827', // Dark text color
 
-      primaryPurple: "#6979F8"
+      // Semantic Colors
+      success: '#4CAF50', // Success messages, online status
+      warning: '#F59302', // Warnings, pending indicators
+      info: '#2196F3', // Info messages, links, notifications
+      danger: '#DC3535', // Errors, destructive actions
+
+      // Neutral Colors
+      white: '#F8FAFC', // Off-white for backgrounds
+      black: '#1E1E1E', // Soft black for dark elements
+      gray: '#70737C', // Default gray color
+      gray100: '#F9FAFB', // Soft background
+      gray200: '#E5E7EB', // Borders & Dividers
+      gray400: '#9CA3AF', // Secondary Text
+      gray600: '#4B5563', // Placeholder & Muted Text
+
+      // Chat Bubble Colors
+      chatBubbleOutgoing: '#A1C4FF', // Muted blue-gray for outgoing messages
+      chatBubbleIncoming: '#D1D9E6', // Light Gray for incoming messages
+
+      // Status Bar Colors
+      statusbar: '#0081cf', // Status bar color
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',
@@ -92,27 +99,34 @@ export const basicTheme: { light: Theme, dark: Theme } = {
       space_36: 36,
     },
     COLORS: {
-      primary: '#1F2937',
-      secondary: '#A0A8FF',
-      tertiary: '#D1D5DB',
-      accent: '#8867FE',
-      lightAccent: '#967ed2',
-      tint: '#F9FAFB',
-      primaryRedHex: '#DC3535',
-      primaryOrangeHex: '#D17842',
-      primaryBlackHex: '#FFFFFF',
-      primaryWhiteHex: '#0C0F14',
-      greyHex: '#A0A4AB',
-      darkGreyHex: '#BDBEC3',
-      lightGreyHex: '#949494',
-      primaryBlackRGBA: 'rgba(255,255,255,0.5)',
-      secondaryBlackRGBA: 'rgba(255,255,255,0.5)',
-      successHex: '#4CAF50',
-      warningHex: '#F59302',
-      infoHex: '#2196F3',
-      dangerHex: '#DC3535',
+      primary: '#1F2937', // Dark mode background
+      secondary: '#374151', // Secondary dark color
+      tertiary: '#9CA3AF', // Muted text in dark mode
+      accent: '#8867FE', // Accent color remains the same
+      lightAccent: '#AD91F3', // Lighter shade of accent
+      tint: '#F9FAFB', // Light text in dark mode
 
-      primaryPurple: "#6979F8"
+      // Semantic Colors
+      success: '#4CAF50', // Success messages, online status
+      warning: '#F59302', // Warnings, pending indicators
+      info: '#2196F3', // Info messages, links, notifications
+      danger: '#DC3535', // Errors, destructive actions
+
+      // Neutral Colors (Adjusted for Dark Mode)
+      white: '#1E1E1E', // Dark variant of white
+      black: '#F8FAFC', // Light variant of black
+      gray: '#9CA3AF', // Default gray for dark mode
+      gray100: '#374151', // Darker soft background
+      gray200: '#4B5563', // Darker borders & dividers
+      gray400: '#9CA3AF', // Secondary text (same)
+      gray600: '#D1D5DB', // Muted text in dark mode
+
+      // Chat Bubble Colors
+      chatBubbleOutgoing: '#607D8B', // Outgoing chat in dark mode
+      chatBubbleIncoming: '#4C5C6C', // Incoming chat in dark mode
+
+      // Status Bar Colors
+      statusbar: '#0e354c', // Status bar color
     },
     FONTFAMILY: {
       poppins_black: 'Poppins-Black',

@@ -20,12 +20,12 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
   return (
     <View style={{
       backgroundColor: theme.COLORS.primary,
-      shadowColor: theme.COLORS.primaryBlackRGBA,
+      shadowColor: theme.COLORS.black,
       elevation: 10
     }}>
       <View style={[
         styles.container,
-        (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex },
+        (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.gray200 },
 
       ]}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ flex: 1, gap: 10, flexDirection: 'row', alignItems: 'center' }}>
@@ -51,7 +51,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
         <View style={{ flex: 1 }}></View>
       </View>
       {heroText && (
-        <View style={{ paddingVertical: 5, paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center', borderBottomWidth: 1, borderBottomColor: theme.COLORS.lightGreyHex }}>
+        <View style={{ paddingVertical: 5, paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center', borderBottomWidth: 1, borderBottomColor: theme.COLORS.gray200 }}>
           <Text style={{ fontSize: theme.FONTSIZE.size_32, fontWeight: 'bold', color: theme.COLORS.tint }}>{heroText}</Text>
           <CustomIcon name={icon as string} size={30} color={theme.COLORS.tint} />
         </View>

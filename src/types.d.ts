@@ -22,21 +22,28 @@ type Color = {
   accent: string;
   lightAccent: string;
   tint: string;
-  primaryRedHex: string;
-  primaryOrangeHex: string;
-  primaryBlackHex: string;
-  darkGreyHex: string;
-  greyHex: string;
-  lightGreyHex: string;
-  primaryWhiteHex: string;
-  primaryBlackRGBA: string;
-  secondaryBlackRGBA: string;
-  successHex: string;
-  warningHex: string;
-  infoHex: string;
-  dangerHex: string;
 
-  primaryPurple: string;
+  // Semantic Colors
+  success: string;
+  warning: string;
+  info: string;
+  danger: string;
+
+  // Neutral Colors
+  white: string;
+  black: string;
+  gray: string;
+  gray100: string;
+  gray200: string;
+  gray400: string;
+  gray600: string;
+
+  // Chat Bubble Colors
+  chatBubbleOutgoing: string;
+  chatBubbleIncoming: string;
+
+  // Status Bar Colors
+  statusbar: string;
 };
 
 type FontFamily = {

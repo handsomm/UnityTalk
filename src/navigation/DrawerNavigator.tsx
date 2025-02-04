@@ -33,7 +33,7 @@ const DrawerNavigator = () => {
           width: 250,
         },
         headerStyle: {
-          backgroundColor: theme.COLORS.primary,
+          backgroundColor: theme.COLORS.statusbar,
         },
         headerTintColor: theme.COLORS.tint,
         headerTitleStyle: {
@@ -41,7 +41,7 @@ const DrawerNavigator = () => {
         },
         drawerActiveTintColor: theme.COLORS.accent,
         drawerLabelStyle: {
-          color: theme.COLORS.primaryBlackHex,
+          color: theme.COLORS.black,
         },
         headerLeft: (props) => {
           const currentScreen = route.name;
@@ -58,7 +58,8 @@ const DrawerNavigator = () => {
           ) : null
         },
         headerTitle: (props) => <AnimatedHeader title={props.children} />,
-        swipeEdgeWidth: 120
+        swipeEdgeWidth: 120,
+        // drawerType: 'permanent'
       })}>
       <DrawerNative.Screen
         name="Home"
@@ -70,7 +71,7 @@ const DrawerNavigator = () => {
             <CustomIcon
               name="home"
               size={theme.FONTSIZE.size_20}
-              color={theme.COLORS.primaryBlackHex}
+              color={theme.COLORS.black}
             />
           ),
         }}

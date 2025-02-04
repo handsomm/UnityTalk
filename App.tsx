@@ -95,12 +95,12 @@ const App = () => {
           theme={{
             dark: mode === 'dark',
             colors: {
-              primary: theme.COLORS.darkGreyHex,
-              background: theme.COLORS.primaryWhiteHex,
-              card: theme.COLORS.darkGreyHex,
-              text: theme.COLORS.primaryBlackHex,
-              border: theme.COLORS.primaryBlackRGBA,
-              notification: theme.COLORS.primaryRedHex,
+              primary: theme.COLORS.primary,
+              background: theme.COLORS.primary,
+              card: theme.COLORS.secondary,
+              text: theme.COLORS.tint,
+              border: theme.COLORS.secondary,
+              notification: theme.COLORS.lightAccent,
             },
           }}>
           <Routes />
