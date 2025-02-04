@@ -27,9 +27,10 @@ export const ThemeContext = createContext<ThemeContextProps>({
 
 export const ThemeProvider = ({children}: {children: ReactNode}) => {
   const {ThemeModule} = NativeModules;
-  const [theme, setTheme] = useState<Theme>(themes.basic.light); // Default theme and mode
+  const [theme, setTheme] = useState<Theme | null>(null); // Initially set to null
   const [mode, setMode] = useState<ThemeMode | 'system'>('light');
   const [themeName, setThemeName] = useState<keyof typeof themes>('basic');
+  const [isReady, setIsReady] = useState(false); // To track theme readiness
   const systemColorScheme = Appearance.getColorScheme() || 'light';
 
   useEffect(() => {
@@ -52,12 +53,15 @@ export const ThemeProvider = ({children}: {children: ReactNode}) => {
           setMode(colorScheme as ThemeMode);
           setTheme(themes[storedThemeName][colorScheme as ThemeMode]);
         });
+        setIsReady(true); // Set readiness after the theme is applied
         return;
       }
 
       setTheme(themes[storedThemeName][storedMode]);
+      setIsReady(true); // Set readiness after the theme is applied
     } catch (error) {
       console.error('Failed to load theme', error);
+      setIsReady(true); // Set readiness even if there is an error
     }
   };
 
@@ -111,15 +115,21 @@ export const ThemeProvider = ({children}: {children: ReactNode}) => {
 
   const contextVal: ThemeContextProps = {
     mode,
-    theme,
+    theme: theme || themes.basic.light, // Default to basic light if theme is null
     toggleMode,
     switchTheme,
     setThemeMode,
   };
 
+  // Don't render anything until the theme is ready to avoid the flicker
+  if (!isReady) {
+    return null; // Return null or a loading screen
+  }
+
   return (
     <ThemeContext.Provider value={contextVal}>{children}</ThemeContext.Provider>
   );
 };
+
 
 export const useTheme = () => useContext(ThemeContext);
