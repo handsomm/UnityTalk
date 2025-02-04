@@ -27,7 +27,7 @@ const MainContainer: React.FC<MainContainerProps> = ({
     <View
       style={[{ backgroundColor: theme.COLORS.primary, flex: 1 }, style]}
       {...props}>
-      <StatusBar backgroundColor={theme.COLORS.statusbar} barStyle={mode === 'dark' ? "light-content" : 'light-content'} />
+      {/* <StatusBar backgroundColor={theme.COLORS.statusbar} barStyle={mode === 'dark' ? "light-content" : 'light-content'} /> */}
       {header && <View>{header}</View>}
       <View style={{ flex: 1 }}>
         {children}

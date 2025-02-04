@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useTheme } from '../context/ThemeContext';
 import CustomIcon from './CustomIcon';
@@ -15,7 +15,6 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
   const { theme } = useTheme();
 
   const navigation = useTypedNavigation();
-
 
   return (
     <View style={{
@@ -64,12 +63,12 @@ export default CustomHeader
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "red",
-    height: 45,
+    height: 45 + StatusBar.currentHeight!,
     justifyContent: "space-between",
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
+    paddingTop: StatusBar.currentHeight,
   },
 })

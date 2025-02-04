@@ -9,8 +9,10 @@ const TestScreen = () => {
 
 
   return (
-    <MainContainer style={{ justifyContent: "center" }}>
-      <CustomHeader heroText='Test' icon='spinner' />
+    <MainContainer
+      header={<CustomHeader heroText='Test' icon='spinner' />}
+      style={{ justifyContent: "center" }}
+    >
 
       <Text style={{ color: theme.COLORS.primary }}>primary</Text>
       <Text style={{ color: theme.COLORS.secondary }}>secondary</Text>
