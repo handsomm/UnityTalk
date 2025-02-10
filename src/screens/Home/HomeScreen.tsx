@@ -22,7 +22,7 @@ const HomeScreen = () => {
       name: 'Jane Smith',
       lastMessage: 'Can we reschedule? Here is the second line of the last message. Below is some basic examples of messages.',
       time: '09:15 AM',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/1',
       unreadCount: 0
     },
     {
@@ -30,7 +30,7 @@ const HomeScreen = () => {
       name: 'Team Unity',
       lastMessage: 'Meeting is at 3 PM. Here is the second line of the last message.',
       time: 'Yesterday',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/26',
       unreadCount: 0
     },
     {
@@ -54,7 +54,7 @@ const HomeScreen = () => {
       name: 'Team Unity',
       lastMessage: 'Meeting is at 3 PM. Here is the second line of the last message.',
       time: 'Yesterday',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/15',
       unreadCount: 100
     },
     {
@@ -70,7 +70,7 @@ const HomeScreen = () => {
       name: 'Jane Smith',
       lastMessage: 'Can we reschedule? Here is the second line of the last message.',
       time: '09:15 AM',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/46',
       unreadCount: 3
     },
     {
@@ -78,7 +78,7 @@ const HomeScreen = () => {
       name: 'Team Unity',
       lastMessage: 'Meeting is at 3 PM. Here is the second line of the last message.',
       time: 'Yesterday',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/3',
       unreadCount: 0
     },
     {
@@ -86,7 +86,7 @@ const HomeScreen = () => {
       name: 'John Doe',
       lastMessage: 'Hey, how are you? Here is the second line of the last message.',
       time: '10:30 AM',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/40',
       unreadCount: 8
     },
     {
@@ -94,7 +94,7 @@ const HomeScreen = () => {
       name: 'Jane Smith',
       lastMessage: 'Can we reschedule? Here is the second line of the last message.',
       time: '09:15 AM',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/2',
       unreadCount: 0
     },
     {
@@ -102,7 +102,7 @@ const HomeScreen = () => {
       name: 'Team Unity',
       lastMessage: 'Meeting is at 3 PM. Here is the second line of the last message.',
       time: 'Yesterday',
-      avatar: 'https://via.placeholder.com/50',
+      avatar: 'https://avatar.iran.liara.run/public/3',
       unreadCount: 2
     },
   ];
