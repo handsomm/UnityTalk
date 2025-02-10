@@ -1,12 +1,12 @@
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Switch } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
 import axios from 'axios';
 import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
 import { checkNotifications } from 'react-native-permissions';
-import { requestUserPermission } from '../../utils/utils';
+import { requestUserPermission } from '../../../utils/utils';
+import { useTheme } from '../../../context/ThemeContext';
 
 const PushNotifications = () => {
   const { theme } = useTheme();
