@@ -20,9 +20,12 @@ export const basicTheme: {light: Theme; dark: Theme} = {
       primary: '#F3F4F6', // Light background
       secondary: '#D1D5DB', // Light gray for borders, dividers
       tertiary: '#4B5563', // Muted text, icons
-      accent: '#8867FE', // Main accent color (buttons, highlights)
-      lightAccent: '#AD91F3', // Lighter shade of accent
+      accent: '#0081CF', // Main accent color (buttons, highlights)
+      lightAccent: '#239bdb', // Lighter shade of accent
       tint: '#111827', // Dark text color
+
+      // accent: '#8867FE', // Main accent color (buttons, highlights)
+      // lightAccent: '#AD91F3', // Lighter shade of accent
 
       // Semantic Colors
       success: '#4CAF50', // Success messages, online status
@@ -103,8 +106,8 @@ export const basicTheme: {light: Theme; dark: Theme} = {
       primary: '#1F2937', // Dark mode background
       secondary: '#374151', // Secondary dark color
       tertiary: '#9CA3AF', // Muted text in dark mode
-      accent: '#8867FE', // Accent color remains the same
-      lightAccent: '#AD91F3', // Lighter shade of accent
+      accent: '#0081CF', // Accent color remains the same
+      lightAccent: '#239bdb', // Lighter shade of accent
       tint: '#F9FAFB', // Light text in dark mode
 
       // Semantic Colors

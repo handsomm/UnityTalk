@@ -10,7 +10,7 @@ type ThemeCardProps = {
 }
 
 const ThemeCard: React.FC<ThemeCardProps> = ({ item, selectedTheme, onSelect }) => {
-  const { switchTheme } = useTheme();
+  const { theme, switchTheme } = useTheme();
   const systemColorScheme = Appearance.getColorScheme() || 'light';
 
   const handleThemeChange = () => {
@@ -20,8 +20,19 @@ const ThemeCard: React.FC<ThemeCardProps> = ({ item, selectedTheme, onSelect }) 
 
   return (
     <Pressable onPress={handleThemeChange}>
-      <View style={[styles.themeBox, { backgroundColor: item.color, borderWidth: selectedTheme === item.key ? 2 : 0, borderColor: themes[item.key][systemColorScheme].COLORS.statusbar }]}>
-        <Text style={styles.icon}>{item.icon}</Text>
+      <View
+        style={[
+          styles.themeBox,
+          {
+            backgroundColor: selectedTheme === item.key ? 'white' : 'transparent',
+            borderWidth: selectedTheme === item.key ? 2 : 0,
+            borderColor: themes[item.key][systemColorScheme].COLORS.accent,
+          }
+        ]}
+      >
+        <View style={[styles.innerBox, { backgroundColor: item.color }]}>
+          <Text style={{ fontSize: theme.FONTSIZE.size_28 }}>{item.icon}</Text>
+        </View>
       </View>
     </Pressable>
   );
@@ -31,15 +42,18 @@ export default ThemeCard;
 
 const styles = StyleSheet.create({
   themeBox: {
-    width: 60,
-    height: 80,
-    borderRadius: 10,
-    marginHorizontal: 8,
-    borderColor: '#000',
+    width: 100,
+    height: 130,
+    borderRadius: 15,
+    marginHorizontal: 4,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  icon: {
-    fontSize: 24,
+  innerBox: {
+    width: 90,
+    height: 120,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
