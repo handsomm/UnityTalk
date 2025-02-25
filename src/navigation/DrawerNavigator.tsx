@@ -31,19 +31,19 @@ const DrawerNavigator = () => {
 
         screenOptions={({ navigation, route }: DrawerNavProps) => ({
           drawerStyle: {
-            backgroundColor: theme.COLORS.primary,
+            backgroundColor: theme.colors.primary,
             width: 250,
           },
           headerStyle: {
-            backgroundColor: theme.COLORS.statusbar,
+            backgroundColor: theme.colors.statusbar,
           },
-          headerTintColor: theme.COLORS.tint,
+          headerTintColor: theme.colors.tint,
           headerTitleStyle: {
             fontWeight: 'bold',
           },
-          drawerActiveTintColor: theme.COLORS.accent,
+          drawerActiveTintColor: theme.colors.accent,
           drawerLabelStyle: {
-            color: theme.COLORS.black,
+            color: theme.colors.black,
           },
           headerLeft: (props) => {
             const currentScreen = route.name;
@@ -53,9 +53,9 @@ const DrawerNavigator = () => {
                 accessibilityLabel='Toggle navigation menu'
                 style={{ width: 38, justifyContent: 'space-between', gap: 4, marginLeft: 12, padding: 5 }}
                 onPress={navigation.toggleDrawer}>
-                <View style={{ width: '100%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
-                <View style={{ width: '70%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
-                <View style={{ width: '85%', height: theme.SPACING.space_4, backgroundColor: theme.COLORS.statusbarContent, borderRadius: theme.BORDERRADIUS.radius_4 }} />
+                <View style={{ width: '100%', height: theme.spacing.space4, backgroundColor: theme.colors.statusbarContent, borderRadius: theme.borderRadii.radius4 }} />
+                <View style={{ width: '70%', height: theme.spacing.space4, backgroundColor: theme.colors.statusbarContent, borderRadius: theme.borderRadii.radius4 }} />
+                <View style={{ width: '85%', height: theme.spacing.space4, backgroundColor: theme.colors.statusbarContent, borderRadius: theme.borderRadii.radius4 }} />
               </TouchableOpacity>
             ) : null
           },
@@ -72,8 +72,8 @@ const DrawerNavigator = () => {
             drawerIcon: () => (
               <CustomIcon
                 name="home"
-                size={theme.FONTSIZE.size_20}
-                color={theme.COLORS.black}
+                size={theme.fontSizes.size20}
+                color={theme.colors.black}
               />
             ),
           }}

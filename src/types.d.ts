@@ -1,18 +1,18 @@
 type Spacing = {
-  space_2: number;
-  space_4: number;
-  space_8: number;
-  space_10: number;
-  space_12: number;
-  space_15: number;
-  space_16: number;
-  space_18: number;
-  space_20: number;
-  space_24: number;
-  space_28: number;
-  space_30: number;
-  space_32: number;
-  space_36: number;
+  space2: number;
+  space4: number;
+  space8: number;
+  space10: number;
+  space12: number;
+  space15: number;
+  space16: number;
+  space18: number;
+  space20: number;
+  space24: number;
+  space28: number;
+  space30: number;
+  space32: number;
+  space36: number;
 };
 
 type Color = {
@@ -48,48 +48,48 @@ type Color = {
 };
 
 type FontFamily = {
-  poppins_black: string;
-  poppins_bold: string;
-  poppins_extrabold: string;
-  poppins_extralight: string;
-  poppins_light: string;
-  poppins_medium: string;
-  poppins_regular: string;
-  poppins_semibold: string;
-  poppins_thin: string;
+  poppinsBlack: string;
+  poppinsBold: string;
+  poppinsExtrabold: string;
+  poppinsExtralight: string;
+  poppinsLight: string;
+  poppinsMedium: string;
+  poppinsRegular: string;
+  poppinsSemibold: string;
+  poppinsThin: string;
 };
 
 type FontSize = {
-  size_8: number;
-  size_10: number;
-  size_12: number;
-  size_14: number;
-  size_16: number;
-  size_18: number;
-  size_20: number;
-  size_24: number;
-  size_28: number;
-  size_30: number;
-  size_32: number;
-  size_34: number;
+  size8: number;
+  size10: number;
+  size12: number;
+  size14: number;
+  size16: number;
+  size18: number;
+  size20: number;
+  size24: number;
+  size28: number;
+  size30: number;
+  size32: number;
+  size34: number;
 };
 
 type BorderRadius = {
-  radius_4: number;
-  radius_8: number;
-  radius_10: number;
-  radius_15: number;
-  radius_20: number;
-  radius_25: number;
-  radius_30: number;
+  radius4: number;
+  radius8: number;
+  radius10: number;
+  radius15: number;
+  radius20: number;
+  radius25: number;
+  radius30: number;
 };
 
 type Theme = {
-  SPACING: Spacing;
-  COLORS: Color;
-  FONTFAMILY: FontFamily;
-  FONTSIZE: FontSize;
-  BORDERRADIUS: BorderRadius;
+  spacing: Spacing;
+  colors: Color;
+  fontFamily: FontFamily;
+  fontSizes: FontSize;
+  borderRadii: BorderRadius;
 };
 
 type ThemeMode = {

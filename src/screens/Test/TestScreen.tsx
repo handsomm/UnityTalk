@@ -14,33 +14,33 @@ const TestScreen = () => {
       style={{ justifyContent: "center" }}
     >
 
-      <Text style={{ color: theme.COLORS.primary }}>primary</Text>
-      <Text style={{ color: theme.COLORS.secondary }}>secondary</Text>
-      <Text style={{ color: theme.COLORS.tertiary }}>tertiary</Text>
-      <Text style={{ color: theme.COLORS.accent }}>accent</Text>
-      <Text style={{ color: theme.COLORS.tint }}>tint</Text>
+      <Text style={{ color: theme.colors.primary }}>primary</Text>
+      <Text style={{ color: theme.colors.secondary }}>secondary</Text>
+      <Text style={{ color: theme.colors.tertiary }}>tertiary</Text>
+      <Text style={{ color: theme.colors.accent }}>accent</Text>
+      <Text style={{ color: theme.colors.tint }}>tint</Text>
 
       <Text>Semantic Colors</Text>
-      <Text style={{ color: theme.COLORS.danger }}>danger</Text>
-      <Text style={{ color: theme.COLORS.info }}>info</Text>
-      <Text style={{ color: theme.COLORS.success }}>success</Text>
-      <Text style={{ color: theme.COLORS.warning }}>warning</Text>
+      <Text style={{ color: theme.colors.danger }}>danger</Text>
+      <Text style={{ color: theme.colors.info }}>info</Text>
+      <Text style={{ color: theme.colors.success }}>success</Text>
+      <Text style={{ color: theme.colors.warning }}>warning</Text>
 
       <Text>Neutral Colors</Text>
-      <Text style={{ color: theme.COLORS.black }}>black</Text>
-      <Text style={{ color: theme.COLORS.white }}>white</Text>
+      <Text style={{ color: theme.colors.black }}>black</Text>
+      <Text style={{ color: theme.colors.white }}>white</Text>
 
 
-      <Text style={{ color: theme.COLORS.gray }}>gray</Text>
-      <Text style={{ color: theme.COLORS.gray100 }}>gray100</Text>
-      <Text style={{ color: theme.COLORS.gray200 }}>gray200</Text>
-      <Text style={{ color: theme.COLORS.gray400 }}>gray400</Text>
-      <Text style={{ color: theme.COLORS.gray600 }}>gray600</Text>
+      <Text style={{ color: theme.colors.gray }}>gray</Text>
+      <Text style={{ color: theme.colors.gray100 }}>gray100</Text>
+      <Text style={{ color: theme.colors.gray200 }}>gray200</Text>
+      <Text style={{ color: theme.colors.gray400 }}>gray400</Text>
+      <Text style={{ color: theme.colors.gray600 }}>gray600</Text>
 
       <Text>Chat Bubble Colors</Text>
-      <Text style={{ color: theme.COLORS.chatBubbleIncoming }}>chatBubbleIncoming</Text>
-      <Text style={{ color: theme.COLORS.chatBubbleOutgoing }}>chatBubbleOutgoing</Text>
-      <Text style={{ color: theme.COLORS.statusbar }}>statusbar</Text>
+      <Text style={{ color: theme.colors.chatBubbleIncoming }}>chatBubbleIncoming</Text>
+      <Text style={{ color: theme.colors.chatBubbleOutgoing }}>chatBubbleOutgoing</Text>
+      <Text style={{ color: theme.colors.statusbar }}>statusbar</Text>
 
       <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
       <Button title="Switch to Elegant" onPress={() => switchTheme('elegant')} />

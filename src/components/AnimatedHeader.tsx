@@ -50,9 +50,9 @@ const AnimatedHeader = ({title}: {title: string}) => {
       {showConnecting ? (
         <Animated.Text
           style={{
-            fontSize: theme.FONTSIZE.size_20,
+            fontSize: theme.fontSizes.size20,
             fontWeight: 'bold',
-            color: theme.COLORS.statusbarContent,
+            color: theme.colors.statusbarContent,
             transform: [{translateY: slideAnim}],
           }}>
           {currentText}
@@ -61,14 +61,14 @@ const AnimatedHeader = ({title}: {title: string}) => {
         <View style={styles.bounceContainer}>
           <Text
             style={{
-              fontSize: theme.FONTSIZE.size_20,
+              fontSize: theme.fontSizes.size20,
               fontWeight: 'bold',
-              color: theme.COLORS.statusbarContent,
+              color: theme.colors.statusbarContent,
             }}>
             {currentText}
           </Text>
-          {/* <BouncingDots color={theme.COLORS.tint} /> */}
-          {/* <FadingDots color={theme.COLORS.tint} /> */}
+          {/* <BouncingDots color={theme.colors.tint} /> */}
+          {/* <FadingDots color={theme.colors.tint} /> */}
         </View>
       )}
     </View>

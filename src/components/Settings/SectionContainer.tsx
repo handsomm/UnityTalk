@@ -12,7 +12,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({children, style}) =>
   const { theme } = useTheme();
 
   return (
-    <View style={{ ...style, backgroundColor: theme.COLORS.white, paddingVertical: theme.SPACING.space_16, marginBottom: theme.SPACING.space_20 }}>
+    <View style={{ ...style, backgroundColor: theme.colors.white, paddingVertical: theme.spacing.space16, marginBottom: theme.spacing.space20 }}>
       {children}
     </View>
   )

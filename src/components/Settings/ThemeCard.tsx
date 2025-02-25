@@ -26,12 +26,12 @@ const ThemeCard: React.FC<ThemeCardProps> = ({ item, selectedTheme, onSelect }) 
           {
             backgroundColor: selectedTheme === item.key ? 'white' : 'transparent',
             borderWidth: selectedTheme === item.key ? 2 : 0,
-            borderColor: themes[item.key][systemColorScheme].COLORS.accent,
+            borderColor: themes[item.key][systemColorScheme].colors.accent,
           }
         ]}
       >
         <View style={[styles.innerBox, { backgroundColor: item.color }]}>
-          <Text style={{ fontSize: theme.FONTSIZE.size_28 }}>{item.icon}</Text>
+          <Text style={{ fontSize: theme.fontSizes.size28 }}>{item.icon}</Text>
         </View>
       </View>
     </Pressable>

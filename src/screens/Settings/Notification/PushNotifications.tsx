@@ -55,12 +55,12 @@ const PushNotifications = () => {
   };
 
   return (
-    <View style={{ paddingHorizontal: theme.SPACING.space_16 }}>
+    <View style={{ paddingHorizontal: theme.spacing.space16 }}>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <Text style={{ fontSize: 32, color: theme.COLORS.tint, lineHeight: 54 }}>Notification</Text>
+        <Text style={{ fontSize: 32, color: theme.colors.tint, lineHeight: 54 }}>Notification</Text>
         <Switch
-          trackColor={{ false: theme.COLORS.gray, true: theme.COLORS.lightAccent }}
-          thumbColor={isEnabled ? theme.COLORS.accent : theme.COLORS.secondary}
+          trackColor={{ false: theme.colors.gray, true: theme.colors.lightAccent }}
+          thumbColor={isEnabled ? theme.colors.accent : theme.colors.secondary}
           onValueChange={toggleSwitch}
           value={isEnabled}
         />

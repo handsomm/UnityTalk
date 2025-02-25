@@ -10,12 +10,12 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
   const { theme } = useTheme();
   return (
     <Text style={{
-      paddingHorizontal: theme.SPACING.space_16,
-      fontSize: theme.FONTSIZE.size_20,
+      paddingHorizontal: theme.spacing.space16,
+      fontSize: theme.fontSizes.size20,
       fontWeight: 'bold',
-      color: theme.COLORS.accent,
-      marginBottom: theme.SPACING.space_15,
-      marginTop: theme.SPACING.space_36
+      color: theme.colors.accent,
+      marginBottom: theme.spacing.space15,
+      marginTop: theme.spacing.space36
     }}>
       {title}
     </Text>

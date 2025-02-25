@@ -40,16 +40,16 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
               marginVertical: 10,
               paddingVertical: 12,
               paddingHorizontal: 10,
-              borderRadius: theme.BORDERRADIUS.radius_8,
+              borderRadius: theme.borderRadii.radius8,
             }}
           >
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <CustomIcon name={item.icon} size={theme.FONTSIZE.size_20} color={theme.COLORS.tint} />
+              <CustomIcon name={item.icon} size={theme.fontSizes.size20} color={theme.colors.tint} />
               <View style={{ marginLeft: 10 }}>
                 <Text style={{
-                  fontSize: theme.FONTSIZE.size_20,
+                  fontSize: theme.fontSizes.size20,
                   fontWeight: 'bold',
-                  color: theme.COLORS.tint,
+                  color: theme.colors.tint,
                 }}>
                   {item.name}
                 </Text>

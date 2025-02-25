@@ -60,7 +60,7 @@ const ThemePreference = () => {
   return (
     <ScrollView>
       <SectionContainer>
-        <Text style={[styles.title, { color: theme.COLORS.accent, paddingHorizontal: theme.SPACING.space_16 }]}>Color Theme</Text>
+        <Text style={[styles.title, { color: theme.colors.accent, paddingHorizontal: theme.spacing.space16 }]}>Color Theme</Text>
         <Animated.FlatList
           data={themesData}
           horizontal
@@ -87,11 +87,11 @@ const ThemePreference = () => {
                 alignItems: 'center',
                 gap: 20,
                 paddingHorizontal: 16,
-                paddingVertical: theme.SPACING.space_10,
+                paddingVertical: theme.spacing.space10,
               }}
             >
-              <CustomIcon name={mode === 'dark' ? 'light' : 'dark'} size={20} color={theme.COLORS.accent} />
-              <Text style={{ fontSize: theme.FONTSIZE.size_16, color: theme.COLORS.accent }}>Switch to Night Mode</Text>
+              <CustomIcon name={mode === 'dark' ? 'light' : 'dark'} size={20} color={theme.colors.accent} />
+              <Text style={{ fontSize: theme.fontSizes.size16, color: theme.colors.accent }}>Switch to Night Mode</Text>
             </Animated.View>
           </Pressable>
         </View>

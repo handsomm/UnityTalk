@@ -21,28 +21,28 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       {item.avatar ? (
-        <Image source={{ uri: item.avatar }} style={[styles.avatar, { borderRadius: theme.BORDERRADIUS.radius_30 }]} />
+        <Image source={{ uri: item.avatar }} style={[styles.avatar, { borderRadius: theme.borderRadii.radius30 }]} />
       ) : (
         <View
           style={[
             styles.avatar,
-            { backgroundColor: theme.COLORS.secondary, borderRadius: theme.BORDERRADIUS.radius_30, justifyContent: 'center', alignItems: 'center' },
+            { backgroundColor: theme.colors.secondary, borderRadius: theme.borderRadii.radius30, justifyContent: 'center', alignItems: 'center' },
           ]}
         >
-          <Text style={{ color: theme.COLORS.accent, fontSize: theme.FONTSIZE.size_16, fontWeight: 'bold', textTransform: 'uppercase' }} >
+          <Text style={{ color: theme.colors.accent, fontSize: theme.fontSizes.size16, fontWeight: 'bold', textTransform: 'uppercase' }} >
             {getInitials(item.name)}
           </Text>
         </View>
       )}
-      <View style={[styles.chatInfo, { borderBottomColor: theme.COLORS.gray400 }]}>
+      <View style={[styles.chatInfo, { borderBottomColor: theme.colors.gray400 }]}>
         <View style={{ flex: 1, gap: 2 }}>
-          <Text style={{ color: theme.COLORS.tint, fontSize: theme.FONTSIZE.size_16, fontWeight: 'bold' }} numberOfLines={1}>
+          <Text style={{ color: theme.colors.tint, fontSize: theme.fontSizes.size16, fontWeight: 'bold' }} numberOfLines={1}>
             {item.name}
           </Text>
           <Text
             style={{
-              color: theme.COLORS.tertiary,
-              fontSize: theme.FONTSIZE.size_14,
+              color: theme.colors.tertiary,
+              fontSize: theme.fontSizes.size14,
               lineHeight: 18,
               minHeight: 36,
             }}
@@ -54,13 +54,13 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
         </View>
 
         <View style={{ alignItems: "flex-end" }}>
-          <Text style={{ fontSize: theme.FONTSIZE.size_12, color: item.unreadCount > 0 ? theme.COLORS.success : theme.COLORS.gray, }}>
+          <Text style={{ fontSize: theme.fontSizes.size12, color: item.unreadCount > 0 ? theme.colors.success : theme.colors.gray, }}>
             {item.time}
           </Text>
           {item.unreadCount > 0 && (
             <View
               style={{
-                backgroundColor: theme.COLORS.success,
+                backgroundColor: theme.colors.success,
                 borderRadius: 12,
                 minWidth: 24,
                 height: 24,
@@ -72,8 +72,8 @@ const ChatItem: React.FC<ChatItemProps> = ({ item, onPress }) => {
             >
               <Text
                 style={{
-                  color: theme.COLORS.white,
-                  fontSize: theme.FONTSIZE.size_12,
+                  color: theme.colors.white,
+                  fontSize: theme.fontSizes.size12,
                   fontWeight: "bold",
                 }}
               >

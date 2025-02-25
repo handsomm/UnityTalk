@@ -24,8 +24,8 @@ const SettingLayout = () => {
       default:
         return (
           <View style={{ justifyContent: "center", alignItems: "center", height: FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER }}>
-            <Text style={{ color: theme.COLORS.gray400, fontSize: theme.FONTSIZE.size_30, fontFamily: theme.FONTFAMILY.poppins_extralight }}>Under development.</Text>
-            <Text style={{ color: theme.COLORS.gray400, fontFamily: theme.FONTFAMILY.poppins_semibold, fontSize: theme.FONTSIZE.size_20 }}>Coming soon!!!!</Text>
+            <Text style={{ color: theme.colors.gray400, fontSize: theme.fontSizes.size30, fontFamily: theme.fontFamily.poppinsExtralight }}>Under development.</Text>
+            <Text style={{ color: theme.colors.gray400, fontFamily: theme.fontFamily.poppinsSemibold, fontSize: theme.fontSizes.size20 }}>Coming soon!!!!</Text>
           </View>
         );
     }

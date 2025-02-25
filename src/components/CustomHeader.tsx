@@ -18,30 +18,30 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
 
   return (
     <View style={{
-      backgroundColor: theme.COLORS.statusbar,
-      shadowColor: theme.COLORS.black,
+      backgroundColor: theme.colors.statusbar,
+      shadowColor: theme.colors.black,
       elevation: 10
     }}>
       <View style={[
         styles.container,
-        (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.COLORS.gray200 },
+        (border || !heroText) && { borderBottomWidth: 1, borderBottomColor: theme.colors.gray200 },
 
       ]}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ flex: 1, gap: 10, flexDirection: 'row', alignItems: 'center' }}>
-          <CustomIcon name='cheveron-left' size={theme.FONTSIZE.size_16} color={theme.COLORS.statusbarContent} />
+          <CustomIcon name='cheveron-left' size={theme.fontSizes.size16} color={theme.colors.statusbarContent} />
           {!title && (
             <Text style={{
-              fontFamily: theme.FONTFAMILY.poppins_regular, fontSize: theme.FONTSIZE.size_16, color: theme.COLORS.statusbarContent, left: -5
+              fontFamily: theme.fontFamily.poppinsRegular, fontSize: theme.fontSizes.size16, color: theme.colors.statusbarContent, left: -5
             }}>
               Back
             </Text>
           )}
         </TouchableOpacity>
         <Text style={{
-          fontSize: theme.FONTSIZE.size_16,
+          fontSize: theme.fontSizes.size16,
           fontWeight: 'bold',
-          color: theme.COLORS.statusbarContent,
-          fontFamily: theme.FONTFAMILY.poppins_semibold,
+          color: theme.colors.statusbarContent,
+          fontFamily: theme.fontFamily.poppinsSemibold,
           flex: 3,
           textAlign: "center",
         }}>
@@ -50,9 +50,9 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ title, border, heroText, ic
         <View style={{ flex: 1 }}></View>
       </View>
       {heroText && (
-        <View style={{ paddingVertical: 5, paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center', borderBottomWidth: 1, borderBottomColor: theme.COLORS.gray200 }}>
-          <Text style={{ fontSize: theme.FONTSIZE.size_32, fontWeight: 'bold', color: theme.COLORS.statusbarContent }}>{heroText}</Text>
-          <CustomIcon name={icon as string} size={30} color={theme.COLORS.statusbarContent} />
+        <View style={{ paddingVertical: 5, paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center', borderBottomWidth: 1, borderBottomColor: theme.colors.gray200 }}>
+          <Text style={{ fontSize: theme.fontSizes.size32, fontWeight: 'bold', color: theme.colors.statusbarContent }}>{heroText}</Text>
+          <CustomIcon name={icon as string} size={30} color={theme.colors.statusbarContent} />
         </View>
       )}
     </View>

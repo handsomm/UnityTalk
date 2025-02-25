@@ -112,7 +112,7 @@ const HomeScreen = () => {
   return (
     <MainContainer>
       <View style={[
-        // { paddingHorizontal: theme.SPACING.space_16, gap: theme.SPACING.space_15 }
+        // { paddingHorizontal: theme.spacing.space16, gap: theme.spacing.space15 }
       ]}>
         <FlatList
           data={chats}
