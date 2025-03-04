@@ -63,12 +63,11 @@ export default CustomHeader
 
 const styles = StyleSheet.create({
   container: {
-    height: 45 + StatusBar.currentHeight!,
+    height: StatusBar.currentHeight! + 24,
     justifyContent: "space-between",
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingTop: StatusBar.currentHeight,
   },
 })

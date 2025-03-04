@@ -36,6 +36,8 @@ const DrawerNavigator = () => {
           },
           headerStyle: {
             backgroundColor: theme.colors.statusbar,
+            shadowColor: theme.colors.black,
+            elevation: 10,
           },
           headerTintColor: theme.colors.tint,
           headerTitleStyle: {
