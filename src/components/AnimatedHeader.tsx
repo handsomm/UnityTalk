@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {View, StyleSheet, Animated, Text} from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
-import {useTheme} from '../context/ThemeContext';
+import { useTheme } from '../context/ColorSchemeContext';
 // import BouncingDots from './Animations/BouncingDots';
 // import FadingDots from './Animations/FadingDots';
 
 const AnimatedHeader = ({title}: {title: string}) => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const [isConnected, setIsConnected] = useState<boolean | null>(true);
   const slideAnim = useRef(new Animated.Value(0)).current;
   const [currentText, setCurrentText] = useState('Connecting...');

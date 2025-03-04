@@ -1,12 +1,12 @@
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 import HomeScreen from '../screens/Home/HomeScreen';
-import { useTheme } from '../context/ThemeContext';
 import CustomIcon from '../components/CustomIcon';
 import { StatusBar, TouchableOpacity, View } from 'react-native';
 import AnimatedHeader from '../components/AnimatedHeader';
 import { RouteProp } from '@react-navigation/native';
 import CustomDrawerContent from '../components/CustomDrawerContent';
+import { useTheme } from '../context/ColorSchemeContext';
 
 export type DrawerParamList = {
   Home: undefined;
@@ -24,7 +24,7 @@ const DrawerNavigator = () => {
 
   return (
     <>
-      <StatusBar backgroundColor={"transparent"} translucent barStyle={mode === 'dark' ? "light-content" : 'light-content'} />
+      {/* <StatusBar backgroundColor={"transparent"} translucent barStyle={colorScheme === 'dark' ? "light-content" : 'light-content'} /> */}
       <DrawerNative.Navigator
         initialRouteName="Home"
         drawerContent={(props) => <CustomDrawerContent {...props} />}

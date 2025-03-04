@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import React from 'react'
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 type ChatItemProps = {
   item: ChatItem,

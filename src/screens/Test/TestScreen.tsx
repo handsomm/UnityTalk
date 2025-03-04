@@ -1,11 +1,14 @@
 import { Button, StyleSheet, Text } from 'react-native'
 import React from 'react'
-import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 import CustomHeader from '../../components/CustomHeader';
+import { useTheme } from '../../context/ColorSchemeContext';
+import { themes } from '../../themes';
 
 const TestScreen = () => {
-  const { theme, mode, toggleMode, switchTheme, setThemeMode } = useTheme();
+  const { theme, switchTheme, setMode, mode, toggle } = useTheme();
+
+  console.log(mode, "colorScheme")
 
 
   return (
@@ -44,10 +47,10 @@ const TestScreen = () => {
 
       <Button title="Switch to Basic" onPress={() => switchTheme('basic')} />
       <Button title="Switch to Elegant" onPress={() => switchTheme('elegant')} />
-      <Button title="Toggle Mode" onPress={toggleMode} />
-      <Button title="Light Mode" onPress={() => setThemeMode('light')} />
-      <Button title="Dark Mode" onPress={() => setThemeMode('dark')} />
-      <Button title="System Mode" onPress={() => setThemeMode('light', 'system')} />
+      <Button title="Toggle Mode" onPress={toggle} />
+      <Button title="Light Mode" onPress={() => setMode('light')} />
+      <Button title="Dark Mode" onPress={() => setMode('dark')} />
+      <Button title="System Mode" onPress={() => setMode('system')} />
     </MainContainer>
   )
 }

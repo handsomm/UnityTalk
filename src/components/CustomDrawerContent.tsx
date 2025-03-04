@@ -1,8 +1,8 @@
 import { Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
-import { useTheme } from '../context/ThemeContext';
 import CustomIcon from './CustomIcon';
+import { useTheme } from '../context/ColorSchemeContext';
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
   const { navigation } = props;

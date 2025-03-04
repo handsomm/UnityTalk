@@ -1,11 +1,11 @@
 import { SectionList, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 import CustomHeader from '../../components/CustomHeader';
 import CustomIcon from '../../components/CustomIcon';
 import SectionHeader from '../../components/Settings/SectionHeader';
 import { useTypedNavigation } from '../../utils/navigationUtils';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 const SettingsScreen = () => {
   const { theme } = useTheme();

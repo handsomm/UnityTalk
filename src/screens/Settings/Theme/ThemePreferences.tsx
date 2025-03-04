@@ -1,19 +1,10 @@
 import { StyleSheet, Text, View, Animated, ScrollView, Pressable } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { useTheme } from '../../../context/ThemeContext';
 import ThemeCard from '../../../components/Settings/ThemeCard';
 import { themes } from '../../../themes';
 import SectionContainer from '../../../components/Settings/SectionContainer';
 import CustomIcon from '../../../components/CustomIcon';
-
-const themesss = [
-  { id: '1', color: '#F3F4F6', icon: '🏠' }, // Light
-  { id: '2', color: '#C5E1A5', icon: '🐥' }, // Green
-  { id: '3', color: '#90CAF9', icon: '⛄' }, // Blue
-  { id: '4', color: '#CE93D8', icon: '💎' }, // Purple
-  { id: '5', color: '#FFCC80', icon: '👩‍🏫' }, // Orange
-  { id: '6', color: '#FFAB91', icon: '🌺' }, // Pink
-];
+import { useTheme } from '../../../context/ColorSchemeContext';
 
 const themesData: { key: keyof typeof themes; color: string; icon: string }[] = [
   { key: 'basic', color: '#F3F4F6', icon: '🏠' },
@@ -21,7 +12,7 @@ const themesData: { key: keyof typeof themes; color: string; icon: string }[] = 
 ];
 
 const ThemePreference = () => {
-  const { mode, theme, storedTheme, toggleMode } = useTheme();
+  const { theme, storedTheme, mode, toggle, active, dispatch, wait, setMode } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState<Themes>(storedTheme || 'basic');
 
   const scaleAnim = useRef(new Animated.Value(1)).current;
@@ -74,7 +65,7 @@ const ThemePreference = () => {
         />
         <View>
           <Pressable
-            onPress={toggleMode}
+            onPress={toggle}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
           >

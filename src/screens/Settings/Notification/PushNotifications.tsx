@@ -6,7 +6,7 @@ import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
 import { checkNotifications } from 'react-native-permissions';
 import { requestUserPermission } from '../../../utils/utils';
-import { useTheme } from '../../../context/ThemeContext';
+import { useTheme } from '../../../context/ColorSchemeContext';
 
 const PushNotifications = () => {
   const { theme } = useTheme();

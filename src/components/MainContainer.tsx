@@ -1,14 +1,10 @@
 import {
-  ScrollView,
-  StyleSheet,
-  ScrollViewProps,
   ViewStyle,
   View,
   StatusBar,
-  SafeAreaView,
 } from 'react-native';
 import React, { ReactNode } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/ColorSchemeContext';
 
 interface MainContainerProps {
   children?: ReactNode;

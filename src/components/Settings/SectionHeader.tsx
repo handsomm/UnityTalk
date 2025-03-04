@@ -1,6 +1,6 @@
 import { StyleSheet, Text } from 'react-native'
 import React from 'react'
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 type SectionHeaderProps = {
   title: string;

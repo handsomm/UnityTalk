@@ -1,24 +1,14 @@
 import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
-import { StyleSheet, ActivityIndicator, SafeAreaView } from 'react-native';
-import DrawerNavigator from './src/navigation/DrawerNavigator';
-import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import notifee from '@notifee/react-native';
-import {
-  ThemeProvider,
-  useTheme,
-} from './src/context/ThemeContext';
 import Routes from './src/navigation/Routes';
 import { requestUserPermission } from './src/utils/utils';
+import { ColorSchemeProvider } from './src/context/ColorSchemeContext';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
-  const { theme, mode } = useTheme();
-
-  if (!theme) {
-    return <ActivityIndicator />;
-  }
-
   async function onMessageReceived(message: any) {
     console.log(message, "message")
     const channelId = await notifee.createChannel({
@@ -90,23 +80,11 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ThemeProvider>
-        <NavigationContainer
-          theme={{
-            dark: mode === 'dark',
-            colors: {
-              primary: theme.colors.primary,
-              background: theme.colors.primary,
-              card: theme.colors.secondary,
-              text: theme.colors.tint,
-              border: theme.colors.secondary,
-              notification: theme.colors.lightAccent,
-            },
-          }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <ColorSchemeProvider>
           <Routes />
-          {/* <DrawerNavigator /> */}
-        </NavigationContainer>
-      </ThemeProvider>
+        </ColorSchemeProvider>
+      </GestureHandlerRootView>
     </SafeAreaView>
   );
 };

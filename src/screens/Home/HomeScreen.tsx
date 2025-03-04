@@ -1,12 +1,11 @@
 import { View, FlatList, StyleSheet } from 'react-native';
 import React from 'react'
-import { useTheme } from '../../context/ThemeContext';
 import MainContainer from '../../components/MainContainer';
 import ChatItem from '../../components/Home/ChatItem';
 import { useTypedNavigation } from '../../utils/navigationUtils';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 const HomeScreen = () => {
-  const { theme } = useTheme();
 
   const chats = [
     {

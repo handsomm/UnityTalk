@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ViewStyle } from 'react-native'
 import React, { ReactNode } from 'react'
-import { useTheme } from '../../context/ThemeContext';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 interface SectionContainerProps {
   children?: ReactNode;
@@ -8,7 +8,7 @@ interface SectionContainerProps {
   // header?: ReactNode;
 }
 
-const SectionContainer: React.FC<SectionContainerProps> = ({children, style}) => {
+const SectionContainer: React.FC<SectionContainerProps> = ({ children, style }) => {
   const { theme } = useTheme();
 
   return (

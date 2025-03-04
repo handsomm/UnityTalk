@@ -1,8 +1,8 @@
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { useTheme } from '../context/ThemeContext';
 import CustomIcon from './CustomIcon';
 import { useTypedNavigation } from '../utils/navigationUtils';
+import { useTheme } from '../context/ColorSchemeContext';
 
 type CustomHeaderProps = {
   title?: string;

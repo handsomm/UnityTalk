@@ -2,11 +2,11 @@ import React from 'react'
 import MainContainer from '../../components/MainContainer';
 import CustomHeader from '../../components/CustomHeader';
 import { useTypedRoute } from '../../utils/routeUtils';
-import { useTheme } from '../../context/ThemeContext';
 import PushNotifications from './Notification/PushNotifications';
 import { Text, View } from 'react-native';
 import { FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER } from '../../utils/constands';
 import ThemePreferences from './Theme/ThemePreferences';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 
 
@@ -20,7 +20,7 @@ const SettingLayout = () => {
       case 'PushNotifications':
         return <PushNotifications />;
       case 'ThemePreferences':
-          return <ThemePreferences />;
+        return <ThemePreferences />;
       default:
         return (
           <View style={{ justifyContent: "center", alignItems: "center", height: FULL_SCREEN_HEIGHT_WITH_SMALL_HEADER }}>

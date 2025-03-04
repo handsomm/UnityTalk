@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Pressable, Appearance } from 'react-native';
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
 import { themes } from '../../themes';
+import { useTheme } from '../../context/ColorSchemeContext';
 
 type ThemeCardProps = {
   item: { key: keyof typeof themes; color: string; icon: string };
@@ -10,6 +10,7 @@ type ThemeCardProps = {
 }
 
 const ThemeCard: React.FC<ThemeCardProps> = ({ item, selectedTheme, onSelect }) => {
+
   const { theme, switchTheme } = useTheme();
   const systemColorScheme = Appearance.getColorScheme() || 'light';
 
