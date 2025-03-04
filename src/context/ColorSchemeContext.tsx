@@ -202,7 +202,7 @@ export const ColorSchemeProvider = ({ children }: ColorSchemeProviderProps) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar backgroundColor={themeState.theme.colors.statusbar} barStyle={colorSchemeState.mode === 'dark' ? "light-content" : 'light-content'} />
+      {/* <StatusBar backgroundColor={themeState.theme.colors.statusbar} barStyle={colorSchemeState.mode === 'dark' ? "light-content" : 'light-content'} /> */}
       <ColorSchemeContext.Provider
         value={{
           ...colorSchemeState,

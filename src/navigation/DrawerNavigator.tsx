@@ -24,7 +24,7 @@ const DrawerNavigator = () => {
 
   return (
     <>
-      {/* <StatusBar backgroundColor={"transparent"} translucent barStyle={colorScheme === 'dark' ? "light-content" : 'light-content'} /> */}
+      <StatusBar backgroundColor={"transparent"} translucent barStyle={mode === 'dark' ? "light-content" : 'light-content'} />
       <DrawerNative.Navigator
         initialRouteName="Home"
         drawerContent={(props) => <CustomDrawerContent {...props} />}
