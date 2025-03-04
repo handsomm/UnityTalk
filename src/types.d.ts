@@ -92,14 +92,9 @@ type Theme = {
   borderRadii: BorderRadius;
 };
 
-type ThemeMode = {
-  light: Theme;
-  dark: Theme;
-  system: Theme;
-};
+type ThemeMode = 'light' | 'dark';
 
 type Themes = 'basic' | 'elegant';
-
 
 type DrawerItems = {
   name: string;

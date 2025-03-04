@@ -2,7 +2,7 @@ import {createTheme} from '@shopify/restyle';
 import {baseTheme} from './baseTheme';
 import {palette} from './palette';
 
-export const lightTheme = createTheme({
+export const lightTheme: Theme = createTheme({
   ...baseTheme,
   colors: {
     ...palette.light,
@@ -23,7 +23,7 @@ export const lightTheme = createTheme({
   },
 });
 
-export const darkTheme = createTheme({
+export const darkTheme: Theme = createTheme({
   ...baseTheme,
   colors: {
     ...palette.dark,
@@ -44,4 +44,4 @@ export const darkTheme = createTheme({
   },
 });
 
-export const basicTheme = {light: lightTheme, dark: darkTheme};
+export const basicTheme: Record<ThemeMode, Theme> = {light: lightTheme, dark: darkTheme};
