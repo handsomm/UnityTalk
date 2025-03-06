@@ -20,11 +20,11 @@ export type DrawerNavProps = {
 
 const DrawerNavigator = () => {
   const DrawerNative = createDrawerNavigator<DrawerParamList>();
-  const { theme, mode } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <>
-      <StatusBar backgroundColor={"transparent"} translucent barStyle={mode === 'dark' ? "light-content" : 'light-content'} />
+      <StatusBar backgroundColor={"transparent"} translucent barStyle={'light-content'} />
       <DrawerNative.Navigator
         initialRouteName="Home"
         drawerContent={(props) => <CustomDrawerContent {...props} />}
@@ -32,7 +32,7 @@ const DrawerNavigator = () => {
         screenOptions={({ navigation, route }: DrawerNavProps) => ({
           drawerStyle: {
             backgroundColor: theme.colors.primary,
-            width: 250,
+            width: 300,
           },
           headerStyle: {
             backgroundColor: theme.colors.statusbar,
@@ -62,7 +62,7 @@ const DrawerNavigator = () => {
             ) : null
           },
           headerTitle: (props) => <AnimatedHeader title={props.children} />,
-          swipeEdgeWidth: 120,
+          swipeEdgeWidth: 300,
           // drawerType: 'permanent'
         })}>
         <DrawerNative.Screen

@@ -1,4 +1,5 @@
 // theme/index.ts
+import { createBox } from '@shopify/restyle';
 import {basicTheme} from './basicTheme';
 import { elegantTheme } from './elegantTheme';
 
@@ -13,3 +14,5 @@ export const themes: Themes = {
   basic: basicTheme,
   elegant: elegantTheme,
 };
+
+export const Box = createBox<Theme>();

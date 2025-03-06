@@ -10,7 +10,7 @@ export const lightTheme: Theme = createTheme({
     secondary: '#D1D5DB',
     tertiary: '#4B5563',
     accent: '#0081CF',
-    lightAccent: '#239bdb',
+    lightAccent: '#76d1f5',
     tint: '#111827',
 
     // Chat Bubble Colors
@@ -31,7 +31,7 @@ export const darkTheme: Theme = createTheme({
     secondary: '#374151',
     tertiary: '#9CA3AF',
     accent: '#0081CF',
-    lightAccent: '#239bdb',
+    lightAccent: '#1B516E',
     tint: '#F9FAFB',
 
     // Chat Bubble Colors
@@ -44,4 +44,7 @@ export const darkTheme: Theme = createTheme({
   },
 });
 
-export const basicTheme: Record<ThemeMode, Theme> = {light: lightTheme, dark: darkTheme};
+export const basicTheme: Record<ThemeMode, Theme> = {
+  light: lightTheme,
+  dark: darkTheme,
+};

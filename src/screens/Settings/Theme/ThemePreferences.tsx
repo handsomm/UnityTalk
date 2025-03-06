@@ -82,7 +82,7 @@ const ThemePreference = () => {
               }}
             >
               <CustomIcon name={mode === 'dark' ? 'light' : 'dark'} size={20} color={theme.colors.accent} />
-              <Text style={{ fontSize: theme.fontSizes.size16, color: theme.colors.accent }}>Switch to Night Mode</Text>
+              <Text style={{ fontSize: theme.fontSizes.size16, color: theme.colors.accent }}>Switch to {mode === 'light' ? ('Night') : ('Day')} Mode</Text>
             </Animated.View>
           </Pressable>
         </View>
