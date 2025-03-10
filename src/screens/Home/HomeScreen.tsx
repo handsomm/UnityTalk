@@ -6,6 +6,7 @@ import { useTypedNavigation } from '../../utils/navigationUtils';
 import { useTheme } from '../../context/ColorSchemeContext';
 
 const HomeScreen = () => {
+  const {theme} = useTheme();
 
   const chats = [
     {
@@ -109,10 +110,7 @@ const HomeScreen = () => {
   const navigation = useTypedNavigation<'StackScreens'>();
 
   return (
-    <MainContainer>
-      <View style={[
-        // { paddingHorizontal: theme.spacing.space16, gap: theme.spacing.space15 }
-      ]}>
+    <MainContainer style={{ paddingHorizontal: theme.spacing.space2 }}>
         <FlatList
           data={chats}
           keyExtractor={(item) => item.id}
@@ -124,7 +122,6 @@ const HomeScreen = () => {
           )}
           showsVerticalScrollIndicator={false}
         />
-      </View>
     </MainContainer>
   )
 }
